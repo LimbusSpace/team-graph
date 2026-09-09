@@ -1,0 +1,42 @@
+:root {
+  font-family: "Microsoft YaHei UI", "Noto Sans SC", "PingFang SC", sans-serif;
+  color: #1f2b28;
+  background: #f4f6f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body { min-height: 100vh; overflow-x: hidden; }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+button,
+select { cursor: pointer; }
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(40, 117, 101, 0.3);
+  outline-offset: 2px;
+}
+
+button:disabled { cursor: default; }

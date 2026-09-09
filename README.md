@@ -21,9 +21,9 @@ push 会将节点推进到“进行中”并生成待审代码证据；合并 PR
 
 `rainmeter/TeamGraph.ini` 可作为 Rainmeter skin 使用。安装后将 `FeedUrl` 改成实际 Pages 地址即可。
 
-## Codex Agent Hook
+## Polyhook Agent Hook
 
-如果希望 Codex Agent 执行 `git add`、`git commit` 或 `git push` 后自动登记节点，阅读 [AGENTS.md](AGENTS.md)，在实际代码仓库安装项目级 `.codex/hooks.json`。这不是 Git 原生 hook，而是 Codex 的 `PostToolUse` lifecycle hook。
+如果希望 Codex、Claude Code、Cursor 或 Windsurf 执行 `git add`、`git commit` 或 `git push` 后自动登记节点，阅读 [AGENTS.md](AGENTS.md)，安装项目级 polyhook。所有 Agent 共用一份 `scripts/team-graph-polyhook.cjs`，由 `@polyhook/sdk` 统一转换事件格式。
 
 ## 本地运行
 
@@ -38,7 +38,7 @@ npm run dev
 
 GitHub-only 模式不需要 Supabase 或独立服务器。成员通过 GitHub 提交、PR 和 Actions 更新 `public/data/project.json` 与 `public/data/status.json`，Pages 和 Rainmeter 每 30 秒读取最新静态状态。
 
-如需接入 Codex Agent，先阅读 [AGENTS.md](AGENTS.md)，再在各自的代码仓库安装项目级 Hook。不要把 Team Graph 的本机路径写进提交内容。
+如需接入 Agent，先阅读 [AGENTS.md](AGENTS.md)，再在各自的代码仓库安装项目级 Hook。不要把 Team Graph 的本机路径写进提交内容。
 
 ## 桌面投影与开机启动
 

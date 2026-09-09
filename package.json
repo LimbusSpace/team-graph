@@ -14,6 +14,7 @@
     "github:status": "node scripts/export-status.cjs"
   },
   "dependencies": {
+    "@polyhook/sdk": "^0.1.11",
     "@supabase/supabase-js": "^2.115.0",
     "@xyflow/react": "^12.11.6",
     "lucide-react": "^1.41.0",

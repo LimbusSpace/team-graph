@@ -54,6 +54,6 @@ flowchart LR
 
 提交信息、分支名或 PR 标题中写节点编号，例如 `RG-032: add drift detector`。GitHub Actions 会把提交进入节点的“待审计证据”，由团队成员通过修改 `public/data/project.json` 的 PR 确认后才计入项目进度。
 
-## Codex 生命周期 Hook
+## Polyhook 跨 Agent Hook
 
-Codex Hook 配置使用项目级 `.codex/hooks.json`，不是 `.git/hooks`。`PostToolUse` 的 Bash matcher 检查 Agent 执行的 `git add`、`git commit` 和 `git push`，并调用 `.codex/hooks/team-graph-post-tool.cjs` 更新状态仓库。每台机器的 Team Graph 绝对路径写在未跟踪的 `.codex/team-graph.local.json` 中；自动推送只有安装时显式传入 `-AutoPush` 才开启。
+共享脚本 `scripts/team-graph-polyhook.cjs` 使用 `@polyhook/sdk` 的 `read()`/`respond()`，把 Claude Code、Cursor、Windsurf、Codex 的事件归一化后处理。每个 Agent 只安装自己的薄配置：`.codex/hooks.json`、`.claude/settings.json`、`.cursor/hooks.json` 或 `.windsurf/hooks.json`。每台机器的 Team Graph 绝对路径写在未跟踪的 `.team-graph/team-graph.local.json` 中；自动推送只有安装时显式传入 `-AutoPush` 才开启。

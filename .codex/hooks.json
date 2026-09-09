@@ -1,5 +1,5 @@
 {
-  "description": "Update Team Graph after Codex runs Git commands.",
+  "description": "Update Team Graph after an Agent runs Git commands.",
   "hooks": {
     "PostToolUse": [
       {
@@ -7,8 +7,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/team-graph-post-tool.cjs\"",
-            "commandWindows": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/team-graph-post-tool.cjs\"",
+            "command": "node \"$(git rev-parse --show-toplevel)/.team-graph/hooks/team-graph-polyhook.cjs\"",
+            "commandWindows": "node \"$(git rev-parse --show-toplevel)/.team-graph/hooks/team-graph-polyhook.cjs\"",
             "async": true,
             "timeout": 120,
             "statusMessage": "同步 Team Graph 状态"

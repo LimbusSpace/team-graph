@@ -44,7 +44,7 @@ flowchart LR
 
 ## 生产部署
 
-1. 在仓库 Settings → Pages 中把 Source 设置为 GitHub Actions。
+1. 在仓库 Settings → Pages 中把 Source 设置为 `gh-pages` 分支根目录。
 2. 保护 `main` 分支，要求至少一名成员 review。
 3. 推送代码，Actions 自动构建并部署 `dist/`。
 4. 每台 Windows 电脑执行 `scripts/install-startup.ps1 -AppUrl "https://LimbusSpace.github.io/team-graph/"`。

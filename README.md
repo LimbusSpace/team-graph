@@ -6,7 +6,7 @@
 
 项目不依赖独立服务器。GitHub Pages 托管网页和状态文件，GitHub Actions 根据带有 `RG-xxx` 的 push / PR 更新状态。
 
-1. 将仓库 Pages 来源设置为 `GitHub Actions`。
+1. 将仓库 Pages 来源设置为 `Deploy from a branch`，分支选择 `gh-pages`、目录选择 `/ (root)`。
 2. 推送到 `main`，等待 `Build and deploy team graph` 工作流完成。
 3. 网页地址为 `https://LimbusSpace.github.io/team-graph/`。
 4. Rainmeter 状态地址为 `https://LimbusSpace.github.io/team-graph/data/status.json`。

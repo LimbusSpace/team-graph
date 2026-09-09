@@ -1,6 +1,6 @@
 # 具身项目依赖台
 
-面向四人具身操作数据项目的共享依赖、证据和进度审计工作台。它借鉴 Prove2Me 的任务分解方式，把研究主张拆成可验证节点，并显示当前真正可开工的前沿节点。
+面向五人具身操作数据项目的共享依赖、证据和进度审计工作台。当前主线是先打通 LeRobot/UMI 遥操，再完成 50 条可用于 BC 的数据采集，并显示当前真正可开工的前沿节点。
 
 ## GitHub-only 部署
 
@@ -21,6 +21,10 @@ push 会将节点推进到“进行中”并生成待审代码证据；合并 PR
 
 `rainmeter/TeamGraph.ini` 可作为 Rainmeter skin 使用。安装后将 `FeedUrl` 改成实际 Pages 地址即可。
 
+## Codex Agent Hook
+
+如果希望 Codex Agent 执行 `git add`、`git commit` 或 `git push` 后自动登记节点，阅读 [AGENTS.md](AGENTS.md)，在实际代码仓库安装项目级 `.codex/hooks.json`。这不是 Git 原生 hook，而是 Codex 的 `PostToolUse` lifecycle hook。
+
 ## 本地运行
 
 ```powershell
@@ -32,12 +36,9 @@ npm run dev
 
 ## 团队实时模式
 
-1. 创建 Supabase 项目。
-2. 在 SQL Editor 依次执行 `supabase/schema.sql` 和 `supabase/seed.sql`。
-3. 在 Supabase Authentication 创建四名团队成员。
-4. 把 `team_members.user_id` 更新为对应 Auth 用户 ID，并填写各自的 `git_emails`。
-5. 复制 `.env.example` 为 `.env.local`，填写 `VITE_SUPABASE_URL` 和 `VITE_SUPABASE_ANON_KEY`。
-6. 运行 `npm run build`，将 `dist/` 部署到团队可访问的 HTTPS 地址。
+GitHub-only 模式不需要 Supabase 或独立服务器。成员通过 GitHub 提交、PR 和 Actions 更新 `public/data/project.json` 与 `public/data/status.json`，Pages 和 Rainmeter 每 30 秒读取最新静态状态。
+
+如需接入 Codex Agent，先阅读 [AGENTS.md](AGENTS.md)，再在各自的代码仓库安装项目级 Hook。不要把 Team Graph 的本机路径写进提交内容。
 
 ## 桌面投影与开机启动
 

@@ -1,0 +1,20 @@
+{
+  "description": "Update Team Graph after Codex runs Git commands.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/team-graph-post-tool.cjs\"",
+            "commandWindows": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/team-graph-post-tool.cjs\"",
+            "async": true,
+            "timeout": 120,
+            "statusMessage": "同步 Team Graph 状态"
+          }
+        ]
+      }
+    ]
+  }
+}

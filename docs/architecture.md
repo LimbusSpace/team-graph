@@ -24,7 +24,7 @@ flowchart LR
 | 前端 | React 19 + TypeScript + Vite | 团队容易维护，迭代和部署成本低 |
 | 依赖图 | React Flow | 支持缩放、平移、节点详情与大图导航 |
 | 状态数据 | GitHub JSON + Pages | 不需要独立服务器；网页和 Rainmeter 轮询 |
-| 审计 | PostgreSQL 追加事件表 + 证据表 | 贡献与状态变化可以追溯到节点和证据 |
+| 审计 | GitHub JSON 追加事件与证据 | 贡献与状态变化可以追溯到节点和提交/PR |
 | 权限 | GitHub repository permissions | 用 PR review 和 branch protection 控制写入 |
 | 代码贡献 | GitHub Actions | 用 push、PR 和 Commit URL 作为证据来源 |
 | 桌面 | PWA + Edge `--app` 启动 | 无需维护原生安装包即可开机显示、全屏投影 |
@@ -53,3 +53,7 @@ flowchart LR
 ## Git 自动归集
 
 提交信息、分支名或 PR 标题中写节点编号，例如 `RG-032: add drift detector`。GitHub Actions 会把提交进入节点的“待审计证据”，由团队成员通过修改 `public/data/project.json` 的 PR 确认后才计入项目进度。
+
+## Codex 生命周期 Hook
+
+Codex Hook 配置使用项目级 `.codex/hooks.json`，不是 `.git/hooks`。`PostToolUse` 的 Bash matcher 检查 Agent 执行的 `git add`、`git commit` 和 `git push`，并调用 `.codex/hooks/team-graph-post-tool.cjs` 更新状态仓库。每台机器的 Team Graph 绝对路径写在未跟踪的 `.codex/team-graph.local.json` 中；自动推送只有安装时显式传入 `-AutoPush` 才开启。

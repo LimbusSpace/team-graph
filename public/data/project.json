@@ -273,7 +273,7 @@
       "summary": "定义空间失败、接触失败和策略级多样性的可计算表示。",
       "type": "gate",
       "phase": "P2 实证",
-      "status": "planned",
+      "status": "review",
       "ownerIds": [
         "zhang",
         "ma"
@@ -281,7 +281,7 @@
       "acceptanceCriteria": "指标与人工标注达到预注册一致性，并能区分空间变化与接触策略变化。",
       "weight": 1.5,
       "lane": 0,
-      "updatedAt": "2026-09-05T09:50:00+08:00"
+      "updatedAt": "2026-09-10T10:45:23.481Z"
     },
     {
       "id": "RG-040",
@@ -688,6 +688,16 @@
   ],
   "evidence": [
     {
+      "id": "EV-GH-PR-2",
+      "workItemId": "RG-035",
+      "actorId": "zhang",
+      "title": "PR #2 已合并 · feat: 看板视觉层级优化——动态抽屉、节点状态文字、关联聚焦与口径修正",
+      "kind": "code",
+      "url": "https://github.com/LimbusSpace/team-graph/pull/2",
+      "accepted": false,
+      "createdAt": "2026-09-10T10:45:23.481Z"
+    },
+    {
       "id": "EV-001",
       "workItemId": "RG-011",
       "actorId": "fei",
@@ -730,6 +740,17 @@
   ],
   "events": [
     {
+      "id": "AE-GH-1789037123481-ae703c1d522fc",
+      "actorId": "zhang",
+      "action": "git.commit",
+      "workItemId": "RG-035",
+      "summary": "PR #2 已合并，RG-035 进入待审计",
+      "createdAt": "2026-09-10T10:45:23.481Z",
+      "metadata": {
+        "pullRequest": "https://github.com/LimbusSpace/team-graph/pull/2"
+      }
+    },
+    {
       "id": "AE-004",
       "actorId": "deng",
       "action": "evidence.accepted",
@@ -762,5 +783,5 @@
       "createdAt": "2026-08-31T11:00:00+08:00"
     }
   ],
-  "updatedAt": "2026-09-05T09:50:00+08:00"
+  "updatedAt": "2026-09-10T10:45:23.481Z"
 }

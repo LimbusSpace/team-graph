@@ -1,0 +1,25 @@
+{
+  "id": "RG-034",
+  "title": "纯视觉机器人基线",
+  "summary": "形成可重复训练、部署和失败记录的第一版机器人策略。",
+  "type": "experiment",
+  "phase": "P1 闭环",
+  "status": "planned",
+  "ownerIds": [
+    "ma"
+  ],
+  "acceptanceCriteria": "固定数据预算下完成不少于 3 个随机种子，并输出逐 episode 失败记录。",
+  "weight": 2,
+  "lane": 6,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-032",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-033",
+      "kind": "hard"
+    }
+  ]
+}

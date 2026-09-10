@@ -1,0 +1,26 @@
+{
+  "id": "RG-035",
+  "title": "失败类型与多样性指标",
+  "summary": "定义空间失败、接触失败和策略级多样性的可计算表示。",
+  "type": "gate",
+  "phase": "P2 实证",
+  "status": "planned",
+  "ownerIds": [
+    "zhang",
+    "ma"
+  ],
+  "acceptanceCriteria": "指标与人工标注达到预注册一致性，并能区分空间变化与接触策略变化。",
+  "weight": 1.5,
+  "lane": 0,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-020",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-034",
+      "kind": "hard"
+    }
+  ]
+}

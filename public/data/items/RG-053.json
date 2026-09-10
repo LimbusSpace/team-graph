@@ -1,0 +1,42 @@
+{
+  "id": "RG-053",
+  "title": "2x2 正式人类实验",
+  "state": "planned",
+  "type": "experiment",
+  "phase": "P3 主张",
+  "owners": [
+    "fei",
+    "ma"
+  ],
+  "acceptance": "按预注册方案完成样本量、随机化、盲化分析和全部排除记录。",
+  "hard_dependencies": [
+    {
+      "id": "RG-051",
+      "state": "planned"
+    },
+    {
+      "id": "RG-052",
+      "state": "planned"
+    }
+  ],
+  "unlocks": [
+    "RG-054"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "运行定向反馈与发散指令的 2x2 设计，并加入非人类对照。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

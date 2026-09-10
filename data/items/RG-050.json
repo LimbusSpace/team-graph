@@ -1,0 +1,26 @@
+{
+  "id": "RG-050",
+  "title": "稀疏失败回放界面",
+  "summary": "向操作者展示失败区域和机器人失败视频，不给连续力控指令。",
+  "type": "task",
+  "phase": "P3 主张",
+  "status": "planned",
+  "ownerIds": [
+    "zhang",
+    "fei"
+  ],
+  "acceptanceCriteria": "操作者可在 30 秒内理解反馈并开始下一轮录制，交互日志完整。",
+  "weight": 1.5,
+  "lane": 0,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-034",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-035",
+      "kind": "hard"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "RG-030",
+  "title": "同步与标定验收",
+  "summary": "用接触锚点和标定序列验证多模态时间与空间对齐。",
+  "type": "gate",
+  "phase": "P1 闭环",
+  "status": "planned",
+  "ownerIds": [
+    "deng",
+    "zhang"
+  ],
+  "acceptanceCriteria": "时间偏差小于 16 ms，关键位姿误差达到任务预注册阈值，失败可自动报警。",
+  "weight": 1.5,
+  "lane": 2,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-023",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-024",
+      "kind": "hard"
+    }
+  ]
+}

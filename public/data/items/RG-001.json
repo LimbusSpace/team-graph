@@ -1,0 +1,40 @@
+{
+  "id": "RG-001",
+  "title": "稀疏失败反馈提升数据效率",
+  "state": "planned",
+  "type": "mission",
+  "phase": "P3 主张",
+  "owners": [
+    "fei",
+    "zhang",
+    "ma",
+    "deng"
+  ],
+  "acceptance": "同等人类录制时长下，主方法相对覆盖驱动、合成和筛选基线取得预注册指标上的显著提升。",
+  "hard_dependencies": [
+    {
+      "id": "RG-054",
+      "state": "planned"
+    }
+  ],
+  "unlocks": [
+    "RG-060"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "在接触密集任务中，用机器人失败回放引导操作者产生策略级多样性。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

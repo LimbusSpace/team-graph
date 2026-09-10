@@ -1,0 +1,26 @@
+{
+  "id": "RG-052",
+  "title": "覆盖 / 合成 / 筛选对照",
+  "summary": "实现覆盖驱动、MimicGen 类合成和影响函数筛选基线。",
+  "type": "experiment",
+  "phase": "P3 主张",
+  "status": "planned",
+  "ownerIds": [
+    "ma",
+    "zhang"
+  ],
+  "acceptanceCriteria": "所有方法使用相同原始数据、人类时长和训练算力预算。",
+  "weight": 2,
+  "lane": 3,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-034",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-035",
+      "kind": "hard"
+    }
+  ]
+}

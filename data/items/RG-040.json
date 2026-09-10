@@ -1,0 +1,30 @@
+{
+  "id": "RG-040",
+  "title": "力信息四档消融",
+  "summary": "比较无力、接触事件、量化力和连续力四种输入。",
+  "type": "experiment",
+  "phase": "P2 实证",
+  "status": "planned",
+  "ownerIds": [
+    "ma",
+    "deng"
+  ],
+  "acceptanceCriteria": "在相同任务、数据量和训练预算下完成多随机种子实机对照。",
+  "weight": 2,
+  "lane": 1,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-032",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-033",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-034",
+      "kind": "hard"
+    }
+  ]
+}

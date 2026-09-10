@@ -3,11 +3,11 @@ name: Build and deploy team graph
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - public/data/project.json
-      - public/data/status.json
   pull_request:
-    types: [closed]
+    types: [opened, synchronize, reopened, closed]
+  schedule:
+    # 每周一对账：重放最近的 commit / 已合并 PR，补偿被取消或漏掉的事件。
+    - cron: '17 3 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -18,7 +18,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  update-and-build:
+  validate:
+    # PR 上只做一致性检查：事实源合法 + 派生产物没有过期。
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check derived data is fresh
+        run: node scripts/build-data.mjs --check
+
+      - name: Validate task graph
+        run: node scripts/task.mjs validate
+
+  update-and-deploy:
     if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
@@ -27,24 +50,39 @@ jobs:
         with:
           fetch-depth: 0
 
+      # squash merge 时 refs/pull/N/merge 不在 main 上，先对齐 main 再落账。
+      - name: Sync checkout to main (PR merge events)
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
-      - name: Apply GitHub event to graph state
+      - name: Apply GitHub event to fact source
         if: github.event_name == 'push' || github.event_name == 'pull_request'
-        run: node scripts/update-github-state.cjs
+        run: node scripts/update-github-state.mjs
 
-      - name: Generate Rainmeter feed
-        run: npm run github:status
+      - name: Reconcile missed GitHub events
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/reconcile-github.mjs --days 30
 
-      - name: Commit generated state
+      - name: Rebuild derived data
+        run: node scripts/build-data.mjs
+
+      # 派生数据提交会再次触发本 workflow，但 github-actions[bot] 的 push
+      # 会被 update-github-state.mjs 跳过，第二次运行只负责部署新数据，循环终止。
+      - name: Commit fact + derived state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/project.json public/data/status.json
+          git add data public/data src/data/seed.ts
           if git diff --cached --quiet; then
             echo "No state changes to commit."
           else

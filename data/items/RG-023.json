@@ -1,0 +1,26 @@
+{
+  "id": "RG-023",
+  "title": "Episode 数据契约 v1",
+  "summary": "统一视频、IMU、FSR、标定、任务标签和证据标识。",
+  "type": "task",
+  "phase": "P1 闭环",
+  "status": "ready",
+  "ownerIds": [
+    "zhang",
+    "deng"
+  ],
+  "acceptanceCriteria": "提供机器可校验的 schema、示例 episode 和版本迁移规则。",
+  "weight": 1,
+  "lane": 0,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-012",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-014",
+      "kind": "hard"
+    }
+  ]
+}

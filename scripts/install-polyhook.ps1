@@ -1,7 +1,6 @@
 param(
   [Parameter(Mandatory = $true)][string]$TargetRepoPath,
   [string]$TeamGraphPath = (Split-Path -Parent $PSScriptRoot),
-  [string]$DefaultNode,
   [ValidateSet('all', 'codex', 'claude-code', 'cursor', 'windsurf')][string]$Agent = 'all',
   [switch]$AutoPush,
   [switch]$Uninstall
@@ -51,7 +50,7 @@ foreach ($name in $agents) {
 
 New-Item -ItemType Directory -Force -Path $sharedHookDir | Out-Null
 Copy-Item -LiteralPath $templateScript -Destination $sharedHookPath -Force
-@{ teamGraphPath = $graph; autoPush = $AutoPush.IsPresent; defaultNode = $DefaultNode } |
+@{ teamGraphPath = $graph; autoPush = $AutoPush.IsPresent } |
   ConvertTo-Json | Set-Content -LiteralPath $localConfigPath -Encoding UTF8
 
 foreach ($name in $agents) {
@@ -71,8 +70,10 @@ foreach ($name in $agents) {
 $excludePath = (& git -C $root rev-parse --git-path info/exclude).Trim()
 if (-not [IO.Path]::IsPathRooted($excludePath)) { $excludePath = Join-Path $root $excludePath }
 $excludeEntries = if (Test-Path -LiteralPath $excludePath) { Get-Content -LiteralPath $excludePath } else { @() }
-if (-not ($excludeEntries -contains '.team-graph/team-graph.local.json')) {
-  Add-Content -LiteralPath $excludePath -Value "`n# Team Graph local polyhook settings`n.team-graph/team-graph.local.json"
+$excludeEntriesToAdd = @('.team-graph/team-graph.local.json', '.team-graph/push-cursor.json')
+$missingEntries = $excludeEntriesToAdd | Where-Object { $excludeEntries -notcontains $_ }
+if ($missingEntries.Count -gt 0) {
+  Add-Content -LiteralPath $excludePath -Value "`n# Team Graph local polyhook settings`n$($missingEntries -join "`n")"
 }
 
 Write-Host "已安装 Team Graph polyhook：$root"

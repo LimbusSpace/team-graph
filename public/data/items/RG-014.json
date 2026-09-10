@@ -1,0 +1,58 @@
+{
+  "id": "RG-014",
+  "title": "FSR / IMU / 同步方案初稿",
+  "state": "done",
+  "type": "task",
+  "phase": "P0 定义",
+  "owners": [
+    "deng"
+  ],
+  "acceptance": "传感器选型、采样率、时间戳和同步验收方法均已记录。",
+  "hard_dependencies": [],
+  "unlocks": [
+    "RG-020",
+    "RG-023",
+    "RG-024"
+  ],
+  "evidence_summary": {
+    "approved": 1,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "view",
+    "reopen_via_audit"
+  ],
+  "updated_at": "2026-08-31T11:30:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "定义接触、姿态、视频的采集硬件和统一时间轴。",
+  "evidence": [
+    {
+      "id": "EV-004",
+      "title": "FSR、IMU、统一时间戳和接触锚点方案",
+      "kind": "document",
+      "state": "approved",
+      "url": "../头戴式EGO采集设备方案.md",
+      "ref": null,
+      "actor": "deng",
+      "created_at": "2026-08-31T11:30:00+08:00",
+      "audit": {
+        "decision": "accepted",
+        "reviewer": null,
+        "reviewed_at": "2026-08-31T11:30:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。"
+      }
+    }
+  ],
+  "history": [
+    {
+      "id": "AE-004",
+      "action": "evidence.accepted",
+      "actor": "deng",
+      "summary": "同步硬件方案初稿通过文档审计",
+      "at": "2026-08-31T11:30:00+08:00"
+    }
+  ],
+  "evidence_count": 1,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

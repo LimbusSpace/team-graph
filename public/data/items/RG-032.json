@@ -1,0 +1,44 @@
+{
+  "id": "RG-032",
+  "title": "自动 QA 与失败过滤",
+  "state": "planned",
+  "type": "task",
+  "phase": "P1 闭环",
+  "owners": [
+    "zhang",
+    "ma"
+  ],
+  "acceptance": "在人工金标准集上报告召回率和误杀率，所有剔除均保留原因。",
+  "hard_dependencies": [
+    {
+      "id": "RG-030",
+      "state": "planned"
+    },
+    {
+      "id": "RG-031",
+      "state": "planned"
+    }
+  ],
+  "unlocks": [
+    "RG-034",
+    "RG-040",
+    "RG-051"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "检测同步失败、SLAM 漂移、跟踪丢失和无效演示。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

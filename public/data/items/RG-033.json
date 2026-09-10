@@ -1,0 +1,44 @@
+{
+  "id": "RG-033",
+  "title": "代理任务与自动复位",
+  "state": "planned",
+  "type": "task",
+  "phase": "P1 闭环",
+  "owners": [
+    "ma",
+    "deng"
+  ],
+  "acceptance": "任务可连续自动复位 100 次，失败恢复不需要研究人员现场干预。",
+  "hard_dependencies": [
+    {
+      "id": "RG-020",
+      "state": "ready"
+    },
+    {
+      "id": "RG-021",
+      "state": "blocked"
+    }
+  ],
+  "unlocks": [
+    "RG-034",
+    "RG-040",
+    "RG-042"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "搭建空间型和接触型任务各至少一个，并支持隔夜重复评估。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

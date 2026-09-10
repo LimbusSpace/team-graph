@@ -1,0 +1,34 @@
+[
+  {
+    "id": "AE-004",
+    "actorId": "deng",
+    "action": "evidence.accepted",
+    "workItemId": "RG-014",
+    "summary": "同步硬件方案初稿通过文档审计",
+    "createdAt": "2026-08-31T11:30:00+08:00"
+  },
+  {
+    "id": "AE-003",
+    "actorId": "ma",
+    "action": "evidence.accepted",
+    "workItemId": "RG-013",
+    "summary": "A/B/C 实验框架初稿通过文档审计",
+    "createdAt": "2026-08-31T11:20:00+08:00"
+  },
+  {
+    "id": "AE-002",
+    "actorId": "zhang",
+    "action": "evidence.accepted",
+    "workItemId": "RG-012",
+    "summary": "动作与场景双管线初稿通过文档审计",
+    "createdAt": "2026-08-31T11:10:00+08:00"
+  },
+  {
+    "id": "AE-001",
+    "actorId": "fei",
+    "action": "evidence.accepted",
+    "workItemId": "RG-011",
+    "summary": "工厂需求与试点路线初稿通过文档审计",
+    "createdAt": "2026-08-31T11:00:00+08:00"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "id": "RG-013",
+  "title": "A/B/C 实验框架初稿",
+  "state": "done",
+  "type": "experiment",
+  "phase": "P0 定义",
+  "owners": [
+    "ma"
+  ],
+  "acceptance": "对照组、主要指标、实机验证资源和决策规则有书面定义。",
+  "hard_dependencies": [],
+  "unlocks": [
+    "RG-020",
+    "RG-021"
+  ],
+  "evidence_summary": {
+    "approved": 1,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "view",
+    "reopen_via_audit"
+  ],
+  "updated_at": "2026-08-31T11:20:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "建立纯视觉、视觉加接触、视觉加接触与关节角三组消融。",
+  "evidence": [
+    {
+      "id": "EV-003",
+      "title": "纯视觉、接触与关节角 A/B/C 消融框架",
+      "kind": "document",
+      "state": "approved",
+      "url": "../doc/PPT/PPT_raw.md",
+      "ref": null,
+      "actor": "ma",
+      "created_at": "2026-08-31T11:20:00+08:00",
+      "audit": {
+        "decision": "accepted",
+        "reviewer": null,
+        "reviewed_at": "2026-08-31T11:20:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。"
+      }
+    }
+  ],
+  "history": [
+    {
+      "id": "AE-003",
+      "action": "evidence.accepted",
+      "actor": "ma",
+      "summary": "A/B/C 实验框架初稿通过文档审计",
+      "at": "2026-08-31T11:20:00+08:00"
+    }
+  ],
+  "evidence_count": 1,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "RG-032",
+  "title": "自动 QA 与失败过滤",
+  "summary": "检测同步失败、SLAM 漂移、跟踪丢失和无效演示。",
+  "type": "task",
+  "phase": "P1 闭环",
+  "status": "planned",
+  "ownerIds": [
+    "zhang",
+    "ma"
+  ],
+  "acceptanceCriteria": "在人工金标准集上报告召回率和误杀率，所有剔除均保留原因。",
+  "weight": 2,
+  "lane": 4,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-030",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-031",
+      "kind": "hard"
+    }
+  ]
+}

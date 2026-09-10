@@ -1,7 +1,7 @@
 import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
-import { seedSnapshot } from '../src/data/seed'
+import { seedSnapshot } from '../../../src/data/seed'
 
 function sql(value: unknown): string {
   if (value === null || value === undefined) return 'null'

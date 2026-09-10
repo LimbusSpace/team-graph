@@ -1,0 +1,37 @@
+{
+  "id": "RG-031",
+  "title": "采集到 LeRobot / RLDS 导出",
+  "state": "planned",
+  "type": "task",
+  "phase": "P1 闭环",
+  "owners": [
+    "zhang"
+  ],
+  "acceptance": "同一输入可重复生成一致数据集，并通过格式与时间轴自动检查。",
+  "hard_dependencies": [
+    {
+      "id": "RG-023",
+      "state": "ready"
+    }
+  ],
+  "unlocks": [
+    "RG-032"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "跑通原始 episode 到可训练数据集的可重复导出。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

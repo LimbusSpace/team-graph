@@ -1,0 +1,42 @@
+{
+  "id": "RG-030",
+  "title": "同步与标定验收",
+  "state": "planned",
+  "type": "gate",
+  "phase": "P1 闭环",
+  "owners": [
+    "deng",
+    "zhang"
+  ],
+  "acceptance": "时间偏差小于 16 ms，关键位姿误差达到任务预注册阈值，失败可自动报警。",
+  "hard_dependencies": [
+    {
+      "id": "RG-023",
+      "state": "ready"
+    },
+    {
+      "id": "RG-024",
+      "state": "ready"
+    }
+  ],
+  "unlocks": [
+    "RG-032"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "用接触锚点和标定序列验证多模态时间与空间对齐。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

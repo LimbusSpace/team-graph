@@ -4,6 +4,10 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   base: process.env.GITHUB_ACTIONS ? '/team-graph/' : '/',
+  // 预览环境使用代理域名访问 dev server，允许任意 Host；生产构建不受影响。
+  server: {
+    allowedHosts: true,
+  },
   plugins: [
     react(),
     VitePWA({

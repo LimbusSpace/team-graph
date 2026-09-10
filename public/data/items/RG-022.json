@@ -1,0 +1,37 @@
+{
+  "id": "RG-022",
+  "title": "受试者与数据合规方案",
+  "state": "ready",
+  "type": "gate",
+  "phase": "P0 定义",
+  "owners": [
+    "fei"
+  ],
+  "acceptance": "伦理流程、同意书、数据保留期限和访问权限通过导师或机构审核。",
+  "hard_dependencies": [
+    {
+      "id": "RG-011",
+      "state": "done"
+    }
+  ],
+  "unlocks": [
+    "RG-051"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "明确知情同意、数据归属、隐私遮蔽和退出机制。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

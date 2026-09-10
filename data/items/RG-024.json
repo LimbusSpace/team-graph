@@ -1,0 +1,21 @@
+{
+  "id": "RG-024",
+  "title": "头戴采集硬件 MVP",
+  "summary": "完成可重复佩戴的视觉、FSR 与 IMU 采集原型。",
+  "type": "task",
+  "phase": "P1 闭环",
+  "status": "ready",
+  "ownerIds": [
+    "deng"
+  ],
+  "acceptanceCriteria": "连续采集 30 分钟无掉电，传感数据完整，设备位移可检测。",
+  "weight": 1.5,
+  "lane": 1,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-014",
+      "kind": "hard"
+    }
+  ]
+}

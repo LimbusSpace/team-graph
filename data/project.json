@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "name": "具身项目依赖台",
+  "description": "面向五人具身操作数据项目的共享依赖、证据和进度审计工作台。",
+  "members": [
+    {
+      "id": "fei",
+      "name": "费典睿",
+      "initials": "费",
+      "role": "产业与用户研究",
+      "focus": "工厂需求、试点合作、受试者与合规",
+      "gitEmails": []
+    },
+    {
+      "id": "zhang",
+      "name": "张家乐",
+      "initials": "张",
+      "role": "视觉与仿真",
+      "focus": "SLAM、数据管线、场景重建与反馈界面",
+      "gitEmails": []
+    },
+    {
+      "id": "ma",
+      "name": "马铭泽",
+      "initials": "马",
+      "role": "策略与实机验证",
+      "focus": "ALOHA、策略训练、消融与实验设计",
+      "gitEmails": []
+    },
+    {
+      "id": "deng",
+      "name": "邓健华",
+      "initials": "邓",
+      "role": "硬件与嵌入式",
+      "focus": "FSR、IMU、同步硬件与佩戴设备",
+      "gitEmails": []
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "RG-023",
+  "title": "Episode 数据契约 v1",
+  "state": "ready",
+  "type": "task",
+  "phase": "P1 闭环",
+  "owners": [
+    "zhang",
+    "deng"
+  ],
+  "acceptance": "提供机器可校验的 schema、示例 episode 和版本迁移规则。",
+  "hard_dependencies": [
+    {
+      "id": "RG-012",
+      "state": "done"
+    },
+    {
+      "id": "RG-014",
+      "state": "done"
+    }
+  ],
+  "unlocks": [
+    "RG-030",
+    "RG-031"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "统一视频、IMU、FSR、标定、任务标签和证据标识。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

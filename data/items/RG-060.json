@@ -1,0 +1,32 @@
+{
+  "id": "RG-060",
+  "title": "论文、数据与复现实验包",
+  "summary": "交付论文、匿名化数据、代码、环境和证据索引。",
+  "type": "release",
+  "phase": "P3 主张",
+  "status": "planned",
+  "ownerIds": [
+    "fei",
+    "zhang",
+    "ma",
+    "deng"
+  ],
+  "acceptanceCriteria": "第三方按 README 可复现主要图表，所有数据均通过合规审查。",
+  "weight": 2,
+  "lane": 6,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-001",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-041",
+      "kind": "soft"
+    },
+    {
+      "id": "RG-044",
+      "kind": "soft"
+    }
+  ]
+}

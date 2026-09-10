@@ -1,0 +1,18 @@
+{
+  "id": "EV-002",
+  "workItemId": "RG-012",
+  "actorId": "zhang",
+  "title": "共享中间层与动作/场景双管线方案",
+  "kind": "document",
+  "url": "../doc/PPT/PPT_raw.md",
+  "accepted": true,
+  "createdAt": "2026-08-31T11:10:00+08:00",
+  "source": "legacy",
+  "audit": {
+    "decision": "accepted",
+    "reviewerId": null,
+    "reviewedAt": "2026-08-31T11:10:00+08:00",
+    "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+    "legacy": true
+  }
+}

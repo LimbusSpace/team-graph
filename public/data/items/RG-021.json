@@ -1,0 +1,37 @@
+{
+  "id": "RG-021",
+  "title": "确认主从臂、场地与排期",
+  "state": "blocked",
+  "type": "gate",
+  "phase": "P0 定义",
+  "owners": [
+    "ma"
+  ],
+  "acceptance": "设备使用权、连续时段、自动复位可行性和故障响应人均得到确认。",
+  "hard_dependencies": [
+    {
+      "id": "RG-013",
+      "state": "done"
+    }
+  ],
+  "unlocks": [
+    "RG-033"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "view",
+    "add_evidence",
+    "unblock"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "落实 ALOHA 或等价平台、场地、维护人和连续实验时段。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

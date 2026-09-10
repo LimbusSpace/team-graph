@@ -1,4 +1,5 @@
 {
+  "revision": "e4fe9942c03baed4",
   "members": [
     {
       "id": "fei",
@@ -461,28 +462,13 @@
   ],
   "dependencies": [
     {
+      "source": "RG-001",
+      "target": "RG-060",
+      "kind": "hard"
+    },
+    {
       "source": "RG-011",
       "target": "RG-020",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-012",
-      "target": "RG-020",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-013",
-      "target": "RG-020",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-014",
-      "target": "RG-020",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-013",
-      "target": "RG-021",
       "kind": "hard"
     },
     {
@@ -492,7 +478,27 @@
     },
     {
       "source": "RG-012",
+      "target": "RG-020",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-012",
       "target": "RG-023",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-013",
+      "target": "RG-020",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-013",
+      "target": "RG-021",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-014",
+      "target": "RG-020",
       "kind": "hard"
     },
     {
@@ -506,18 +512,38 @@
       "kind": "hard"
     },
     {
-      "source": "RG-023",
-      "target": "RG-030",
+      "source": "RG-020",
+      "target": "RG-033",
       "kind": "hard"
     },
     {
-      "source": "RG-024",
+      "source": "RG-020",
+      "target": "RG-035",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-021",
+      "target": "RG-033",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-022",
+      "target": "RG-051",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-023",
       "target": "RG-030",
       "kind": "hard"
     },
     {
       "source": "RG-023",
       "target": "RG-031",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-024",
+      "target": "RG-030",
       "kind": "hard"
     },
     {
@@ -531,33 +557,8 @@
       "kind": "hard"
     },
     {
-      "source": "RG-020",
-      "target": "RG-033",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-021",
-      "target": "RG-033",
-      "kind": "hard"
-    },
-    {
       "source": "RG-032",
       "target": "RG-034",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-033",
-      "target": "RG-034",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-020",
-      "target": "RG-035",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-034",
-      "target": "RG-035",
       "kind": "hard"
     },
     {
@@ -566,13 +567,58 @@
       "kind": "hard"
     },
     {
+      "source": "RG-032",
+      "target": "RG-051",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-033",
+      "target": "RG-034",
+      "kind": "hard"
+    },
+    {
       "source": "RG-033",
       "target": "RG-040",
       "kind": "hard"
     },
     {
+      "source": "RG-033",
+      "target": "RG-042",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-035",
+      "kind": "hard"
+    },
+    {
       "source": "RG-034",
       "target": "RG-040",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-043",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-050",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-052",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-035",
+      "target": "RG-050",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-035",
+      "target": "RG-052",
       "kind": "hard"
     },
     {
@@ -586,17 +632,17 @@
       "kind": "hard"
     },
     {
-      "source": "RG-033",
-      "target": "RG-042",
-      "kind": "hard"
+      "source": "RG-041",
+      "target": "RG-053",
+      "kind": "soft"
+    },
+    {
+      "source": "RG-041",
+      "target": "RG-060",
+      "kind": "soft"
     },
     {
       "source": "RG-042",
-      "target": "RG-043",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-034",
       "target": "RG-043",
       "kind": "hard"
     },
@@ -606,38 +652,18 @@
       "kind": "hard"
     },
     {
-      "source": "RG-034",
-      "target": "RG-050",
-      "kind": "hard"
+      "source": "RG-044",
+      "target": "RG-053",
+      "kind": "soft"
     },
     {
-      "source": "RG-035",
-      "target": "RG-050",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-022",
-      "target": "RG-051",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-032",
-      "target": "RG-051",
-      "kind": "hard"
+      "source": "RG-044",
+      "target": "RG-060",
+      "kind": "soft"
     },
     {
       "source": "RG-050",
       "target": "RG-051",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-034",
-      "target": "RG-052",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-035",
-      "target": "RG-052",
       "kind": "hard"
     },
     {
@@ -651,16 +677,6 @@
       "kind": "hard"
     },
     {
-      "source": "RG-041",
-      "target": "RG-053",
-      "kind": "soft"
-    },
-    {
-      "source": "RG-044",
-      "target": "RG-053",
-      "kind": "soft"
-    },
-    {
       "source": "RG-053",
       "target": "RG-054",
       "kind": "hard"
@@ -669,21 +685,6 @@
       "source": "RG-054",
       "target": "RG-001",
       "kind": "hard"
-    },
-    {
-      "source": "RG-001",
-      "target": "RG-060",
-      "kind": "hard"
-    },
-    {
-      "source": "RG-041",
-      "target": "RG-060",
-      "kind": "soft"
-    },
-    {
-      "source": "RG-044",
-      "target": "RG-060",
-      "kind": "soft"
     }
   ],
   "evidence": [
@@ -695,7 +696,15 @@
       "kind": "document",
       "url": "../doc/PPT/PPT_raw.md",
       "accepted": true,
-      "createdAt": "2026-08-31T11:00:00+08:00"
+      "createdAt": "2026-08-31T11:00:00+08:00",
+      "source": "legacy",
+      "audit": {
+        "decision": "accepted",
+        "reviewerId": null,
+        "reviewedAt": "2026-08-31T11:00:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+        "legacy": true
+      }
     },
     {
       "id": "EV-002",
@@ -705,7 +714,15 @@
       "kind": "document",
       "url": "../doc/PPT/PPT_raw.md",
       "accepted": true,
-      "createdAt": "2026-08-31T11:10:00+08:00"
+      "createdAt": "2026-08-31T11:10:00+08:00",
+      "source": "legacy",
+      "audit": {
+        "decision": "accepted",
+        "reviewerId": null,
+        "reviewedAt": "2026-08-31T11:10:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+        "legacy": true
+      }
     },
     {
       "id": "EV-003",
@@ -715,7 +732,15 @@
       "kind": "document",
       "url": "../doc/PPT/PPT_raw.md",
       "accepted": true,
-      "createdAt": "2026-08-31T11:20:00+08:00"
+      "createdAt": "2026-08-31T11:20:00+08:00",
+      "source": "legacy",
+      "audit": {
+        "decision": "accepted",
+        "reviewerId": null,
+        "reviewedAt": "2026-08-31T11:20:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+        "legacy": true
+      }
     },
     {
       "id": "EV-004",
@@ -725,7 +750,15 @@
       "kind": "document",
       "url": "../头戴式EGO采集设备方案.md",
       "accepted": true,
-      "createdAt": "2026-08-31T11:30:00+08:00"
+      "createdAt": "2026-08-31T11:30:00+08:00",
+      "source": "legacy",
+      "audit": {
+        "decision": "accepted",
+        "reviewerId": null,
+        "reviewedAt": "2026-08-31T11:30:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+        "legacy": true
+      }
     }
   ],
   "events": [

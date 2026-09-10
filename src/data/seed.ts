@@ -1,515 +1,803 @@
 import type { ProjectSnapshot } from '../types'
 
+// 由 scripts/build-data.mjs 从 data/ 事实源生成，请勿手工编辑。
+// 修改数据请编辑 data/ 目录，然后运行 node scripts/build-data.mjs。
 export const seedSnapshot: ProjectSnapshot = {
-  members: [
+  "revision": "e4fe9942c03baed4",
+  "members": [
     {
-      id: 'fei',
-      name: '费典睿',
-      initials: '费',
-      role: '产业与用户研究',
-      focus: '工厂需求、试点合作、受试者与合规',
-      gitEmails: [],
+      "id": "fei",
+      "name": "费典睿",
+      "initials": "费",
+      "role": "产业与用户研究",
+      "focus": "工厂需求、试点合作、受试者与合规",
+      "gitEmails": []
     },
     {
-      id: 'zhang',
-      name: '张家乐',
-      initials: '张',
-      role: '视觉与仿真',
-      focus: 'SLAM、数据管线、场景重建与反馈界面',
-      gitEmails: [],
+      "id": "zhang",
+      "name": "张家乐",
+      "initials": "张",
+      "role": "视觉与仿真",
+      "focus": "SLAM、数据管线、场景重建与反馈界面",
+      "gitEmails": []
     },
     {
-      id: 'ma',
-      name: '马铭泽',
-      initials: '马',
-      role: '策略与实机验证',
-      focus: 'ALOHA、策略训练、消融与实验设计',
-      gitEmails: [],
+      "id": "ma",
+      "name": "马铭泽",
+      "initials": "马",
+      "role": "策略与实机验证",
+      "focus": "ALOHA、策略训练、消融与实验设计",
+      "gitEmails": []
     },
     {
-      id: 'deng',
-      name: '邓健华',
-      initials: '邓',
-      role: '硬件与嵌入式',
-      focus: 'FSR、IMU、同步硬件与佩戴设备',
-      gitEmails: [],
-    },
+      "id": "deng",
+      "name": "邓健华",
+      "initials": "邓",
+      "role": "硬件与嵌入式",
+      "focus": "FSR、IMU、同步硬件与佩戴设备",
+      "gitEmails": []
+    }
   ],
-  items: [
+  "items": [
     {
-      id: 'RG-001',
-      title: '稀疏失败反馈提升数据效率',
-      summary: '在接触密集任务中，用机器人失败回放引导操作者产生策略级多样性。',
-      type: 'mission',
-      phase: 'P3 主张',
-      status: 'planned',
-      ownerIds: ['fei', 'zhang', 'ma', 'deng'],
-      acceptanceCriteria: '同等人类录制时长下，主方法相对覆盖驱动、合成和筛选基线取得预注册指标上的显著提升。',
-      weight: 3,
-      lane: 2,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-001",
+      "title": "稀疏失败反馈提升数据效率",
+      "summary": "在接触密集任务中，用机器人失败回放引导操作者产生策略级多样性。",
+      "type": "mission",
+      "phase": "P3 主张",
+      "status": "planned",
+      "ownerIds": [
+        "fei",
+        "zhang",
+        "ma",
+        "deng"
+      ],
+      "acceptanceCriteria": "同等人类录制时长下，主方法相对覆盖驱动、合成和筛选基线取得预注册指标上的显著提升。",
+      "weight": 3,
+      "lane": 2,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-011',
-      title: '工厂需求与试点路线初稿',
-      summary: '定义目标工况、合作入口和从实验室到工厂的试点路径。',
-      type: 'task',
-      phase: 'P0 定义',
-      status: 'done',
-      ownerIds: ['fei'],
-      acceptanceCriteria: '形成目标用户、试点范围、合作门槛和合规风险清单。',
-      weight: 0.5,
-      lane: 0,
-      updatedAt: '2026-08-31T11:00:00+08:00',
+      "id": "RG-011",
+      "title": "工厂需求与试点路线初稿",
+      "summary": "定义目标工况、合作入口和从实验室到工厂的试点路径。",
+      "type": "task",
+      "phase": "P0 定义",
+      "status": "done",
+      "ownerIds": [
+        "fei"
+      ],
+      "acceptanceCriteria": "形成目标用户、试点范围、合作门槛和合规风险清单。",
+      "weight": 0.5,
+      "lane": 0,
+      "updatedAt": "2026-08-31T11:00:00+08:00"
     },
     {
-      id: 'RG-012',
-      title: '动作与场景双管线初稿',
-      summary: '定义共享视觉中间层、动作数据分支和可交互场景分支。',
-      type: 'task',
-      phase: 'P0 定义',
-      status: 'done',
-      ownerIds: ['zhang'],
-      acceptanceCriteria: '输入、共享缓存、两类输出和关键质量门均有明确接口。',
-      weight: 0.5,
-      lane: 1,
-      updatedAt: '2026-08-31T11:10:00+08:00',
+      "id": "RG-012",
+      "title": "动作与场景双管线初稿",
+      "summary": "定义共享视觉中间层、动作数据分支和可交互场景分支。",
+      "type": "task",
+      "phase": "P0 定义",
+      "status": "done",
+      "ownerIds": [
+        "zhang"
+      ],
+      "acceptanceCriteria": "输入、共享缓存、两类输出和关键质量门均有明确接口。",
+      "weight": 0.5,
+      "lane": 1,
+      "updatedAt": "2026-08-31T11:10:00+08:00"
     },
     {
-      id: 'RG-013',
-      title: 'A/B/C 实验框架初稿',
-      summary: '建立纯视觉、视觉加接触、视觉加接触与关节角三组消融。',
-      type: 'experiment',
-      phase: 'P0 定义',
-      status: 'done',
-      ownerIds: ['ma'],
-      acceptanceCriteria: '对照组、主要指标、实机验证资源和决策规则有书面定义。',
-      weight: 0.5,
-      lane: 2,
-      updatedAt: '2026-08-31T11:20:00+08:00',
+      "id": "RG-013",
+      "title": "A/B/C 实验框架初稿",
+      "summary": "建立纯视觉、视觉加接触、视觉加接触与关节角三组消融。",
+      "type": "experiment",
+      "phase": "P0 定义",
+      "status": "done",
+      "ownerIds": [
+        "ma"
+      ],
+      "acceptanceCriteria": "对照组、主要指标、实机验证资源和决策规则有书面定义。",
+      "weight": 0.5,
+      "lane": 2,
+      "updatedAt": "2026-08-31T11:20:00+08:00"
     },
     {
-      id: 'RG-014',
-      title: 'FSR / IMU / 同步方案初稿',
-      summary: '定义接触、姿态、视频的采集硬件和统一时间轴。',
-      type: 'task',
-      phase: 'P0 定义',
-      status: 'done',
-      ownerIds: ['deng'],
-      acceptanceCriteria: '传感器选型、采样率、时间戳和同步验收方法均已记录。',
-      weight: 0.5,
-      lane: 3,
-      updatedAt: '2026-08-31T11:30:00+08:00',
+      "id": "RG-014",
+      "title": "FSR / IMU / 同步方案初稿",
+      "summary": "定义接触、姿态、视频的采集硬件和统一时间轴。",
+      "type": "task",
+      "phase": "P0 定义",
+      "status": "done",
+      "ownerIds": [
+        "deng"
+      ],
+      "acceptanceCriteria": "传感器选型、采样率、时间戳和同步验收方法均已记录。",
+      "weight": 0.5,
+      "lane": 3,
+      "updatedAt": "2026-08-31T11:30:00+08:00"
     },
     {
-      id: 'RG-020',
-      title: '冻结 MVP 任务与验收口径',
-      summary: '锁定两指夹爪任务、具身约束、成功定义和数据效率口径。',
-      type: 'gate',
-      phase: 'P0 定义',
-      status: 'ready',
-      ownerIds: ['ma', 'fei'],
-      acceptanceCriteria: '团队签字确认 2-3 个任务、自动复位条件、成功判据和人类时间预算。',
-      weight: 1,
-      lane: 4,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-020",
+      "title": "冻结 MVP 任务与验收口径",
+      "summary": "锁定两指夹爪任务、具身约束、成功定义和数据效率口径。",
+      "type": "gate",
+      "phase": "P0 定义",
+      "status": "ready",
+      "ownerIds": [
+        "ma",
+        "fei"
+      ],
+      "acceptanceCriteria": "团队签字确认 2-3 个任务、自动复位条件、成功判据和人类时间预算。",
+      "weight": 1,
+      "lane": 4,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-021',
-      title: '确认主从臂、场地与排期',
-      summary: '落实 ALOHA 或等价平台、场地、维护人和连续实验时段。',
-      type: 'gate',
-      phase: 'P0 定义',
-      status: 'blocked',
-      ownerIds: ['ma'],
-      acceptanceCriteria: '设备使用权、连续时段、自动复位可行性和故障响应人均得到确认。',
-      weight: 1,
-      lane: 5,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-021",
+      "title": "确认主从臂、场地与排期",
+      "summary": "落实 ALOHA 或等价平台、场地、维护人和连续实验时段。",
+      "type": "gate",
+      "phase": "P0 定义",
+      "status": "blocked",
+      "ownerIds": [
+        "ma"
+      ],
+      "acceptanceCriteria": "设备使用权、连续时段、自动复位可行性和故障响应人均得到确认。",
+      "weight": 1,
+      "lane": 5,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-022',
-      title: '受试者与数据合规方案',
-      summary: '明确知情同意、数据归属、隐私遮蔽和退出机制。',
-      type: 'gate',
-      phase: 'P0 定义',
-      status: 'ready',
-      ownerIds: ['fei'],
-      acceptanceCriteria: '伦理流程、同意书、数据保留期限和访问权限通过导师或机构审核。',
-      weight: 1,
-      lane: 6,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-022",
+      "title": "受试者与数据合规方案",
+      "summary": "明确知情同意、数据归属、隐私遮蔽和退出机制。",
+      "type": "gate",
+      "phase": "P0 定义",
+      "status": "ready",
+      "ownerIds": [
+        "fei"
+      ],
+      "acceptanceCriteria": "伦理流程、同意书、数据保留期限和访问权限通过导师或机构审核。",
+      "weight": 1,
+      "lane": 6,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-023',
-      title: 'Episode 数据契约 v1',
-      summary: '统一视频、IMU、FSR、标定、任务标签和证据标识。',
-      type: 'task',
-      phase: 'P1 闭环',
-      status: 'ready',
-      ownerIds: ['zhang', 'deng'],
-      acceptanceCriteria: '提供机器可校验的 schema、示例 episode 和版本迁移规则。',
-      weight: 1,
-      lane: 0,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-023",
+      "title": "Episode 数据契约 v1",
+      "summary": "统一视频、IMU、FSR、标定、任务标签和证据标识。",
+      "type": "task",
+      "phase": "P1 闭环",
+      "status": "ready",
+      "ownerIds": [
+        "zhang",
+        "deng"
+      ],
+      "acceptanceCriteria": "提供机器可校验的 schema、示例 episode 和版本迁移规则。",
+      "weight": 1,
+      "lane": 0,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-024',
-      title: '头戴采集硬件 MVP',
-      summary: '完成可重复佩戴的视觉、FSR 与 IMU 采集原型。',
-      type: 'task',
-      phase: 'P1 闭环',
-      status: 'ready',
-      ownerIds: ['deng'],
-      acceptanceCriteria: '连续采集 30 分钟无掉电，传感数据完整，设备位移可检测。',
-      weight: 1.5,
-      lane: 1,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-024",
+      "title": "头戴采集硬件 MVP",
+      "summary": "完成可重复佩戴的视觉、FSR 与 IMU 采集原型。",
+      "type": "task",
+      "phase": "P1 闭环",
+      "status": "ready",
+      "ownerIds": [
+        "deng"
+      ],
+      "acceptanceCriteria": "连续采集 30 分钟无掉电，传感数据完整，设备位移可检测。",
+      "weight": 1.5,
+      "lane": 1,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-030',
-      title: '同步与标定验收',
-      summary: '用接触锚点和标定序列验证多模态时间与空间对齐。',
-      type: 'gate',
-      phase: 'P1 闭环',
-      status: 'planned',
-      ownerIds: ['deng', 'zhang'],
-      acceptanceCriteria: '时间偏差小于 16 ms，关键位姿误差达到任务预注册阈值，失败可自动报警。',
-      weight: 1.5,
-      lane: 2,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-030",
+      "title": "同步与标定验收",
+      "summary": "用接触锚点和标定序列验证多模态时间与空间对齐。",
+      "type": "gate",
+      "phase": "P1 闭环",
+      "status": "planned",
+      "ownerIds": [
+        "deng",
+        "zhang"
+      ],
+      "acceptanceCriteria": "时间偏差小于 16 ms，关键位姿误差达到任务预注册阈值，失败可自动报警。",
+      "weight": 1.5,
+      "lane": 2,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-031',
-      title: '采集到 LeRobot / RLDS 导出',
-      summary: '跑通原始 episode 到可训练数据集的可重复导出。',
-      type: 'task',
-      phase: 'P1 闭环',
-      status: 'planned',
-      ownerIds: ['zhang'],
-      acceptanceCriteria: '同一输入可重复生成一致数据集，并通过格式与时间轴自动检查。',
-      weight: 1.5,
-      lane: 3,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-031",
+      "title": "采集到 LeRobot / RLDS 导出",
+      "summary": "跑通原始 episode 到可训练数据集的可重复导出。",
+      "type": "task",
+      "phase": "P1 闭环",
+      "status": "planned",
+      "ownerIds": [
+        "zhang"
+      ],
+      "acceptanceCriteria": "同一输入可重复生成一致数据集，并通过格式与时间轴自动检查。",
+      "weight": 1.5,
+      "lane": 3,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-032',
-      title: '自动 QA 与失败过滤',
-      summary: '检测同步失败、SLAM 漂移、跟踪丢失和无效演示。',
-      type: 'task',
-      phase: 'P1 闭环',
-      status: 'planned',
-      ownerIds: ['zhang', 'ma'],
-      acceptanceCriteria: '在人工金标准集上报告召回率和误杀率，所有剔除均保留原因。',
-      weight: 2,
-      lane: 4,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-032",
+      "title": "自动 QA 与失败过滤",
+      "summary": "检测同步失败、SLAM 漂移、跟踪丢失和无效演示。",
+      "type": "task",
+      "phase": "P1 闭环",
+      "status": "planned",
+      "ownerIds": [
+        "zhang",
+        "ma"
+      ],
+      "acceptanceCriteria": "在人工金标准集上报告召回率和误杀率，所有剔除均保留原因。",
+      "weight": 2,
+      "lane": 4,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-033',
-      title: '代理任务与自动复位',
-      summary: '搭建空间型和接触型任务各至少一个，并支持隔夜重复评估。',
-      type: 'task',
-      phase: 'P1 闭环',
-      status: 'planned',
-      ownerIds: ['ma', 'deng'],
-      acceptanceCriteria: '任务可连续自动复位 100 次，失败恢复不需要研究人员现场干预。',
-      weight: 2,
-      lane: 5,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-033",
+      "title": "代理任务与自动复位",
+      "summary": "搭建空间型和接触型任务各至少一个，并支持隔夜重复评估。",
+      "type": "task",
+      "phase": "P1 闭环",
+      "status": "planned",
+      "ownerIds": [
+        "ma",
+        "deng"
+      ],
+      "acceptanceCriteria": "任务可连续自动复位 100 次，失败恢复不需要研究人员现场干预。",
+      "weight": 2,
+      "lane": 5,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-034',
-      title: '纯视觉机器人基线',
-      summary: '形成可重复训练、部署和失败记录的第一版机器人策略。',
-      type: 'experiment',
-      phase: 'P1 闭环',
-      status: 'planned',
-      ownerIds: ['ma'],
-      acceptanceCriteria: '固定数据预算下完成不少于 3 个随机种子，并输出逐 episode 失败记录。',
-      weight: 2,
-      lane: 6,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-034",
+      "title": "纯视觉机器人基线",
+      "summary": "形成可重复训练、部署和失败记录的第一版机器人策略。",
+      "type": "experiment",
+      "phase": "P1 闭环",
+      "status": "planned",
+      "ownerIds": [
+        "ma"
+      ],
+      "acceptanceCriteria": "固定数据预算下完成不少于 3 个随机种子，并输出逐 episode 失败记录。",
+      "weight": 2,
+      "lane": 6,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-035',
-      title: '失败类型与多样性指标',
-      summary: '定义空间失败、接触失败和策略级多样性的可计算表示。',
-      type: 'gate',
-      phase: 'P2 实证',
-      status: 'planned',
-      ownerIds: ['zhang', 'ma'],
-      acceptanceCriteria: '指标与人工标注达到预注册一致性，并能区分空间变化与接触策略变化。',
-      weight: 1.5,
-      lane: 0,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-035",
+      "title": "失败类型与多样性指标",
+      "summary": "定义空间失败、接触失败和策略级多样性的可计算表示。",
+      "type": "gate",
+      "phase": "P2 实证",
+      "status": "planned",
+      "ownerIds": [
+        "zhang",
+        "ma"
+      ],
+      "acceptanceCriteria": "指标与人工标注达到预注册一致性，并能区分空间变化与接触策略变化。",
+      "weight": 1.5,
+      "lane": 0,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-040',
-      title: '力信息四档消融',
-      summary: '比较无力、接触事件、量化力和连续力四种输入。',
-      type: 'experiment',
-      phase: 'P2 实证',
-      status: 'planned',
-      ownerIds: ['ma', 'deng'],
-      acceptanceCriteria: '在相同任务、数据量和训练预算下完成多随机种子实机对照。',
-      weight: 2,
-      lane: 1,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-040",
+      "title": "力信息四档消融",
+      "summary": "比较无力、接触事件、量化力和连续力四种输入。",
+      "type": "experiment",
+      "phase": "P2 实证",
+      "status": "planned",
+      "ownerIds": [
+        "ma",
+        "deng"
+      ],
+      "acceptanceCriteria": "在相同任务、数据量和训练预算下完成多随机种子实机对照。",
+      "weight": 2,
+      "lane": 1,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-041',
-      title: '力信息饱和边界',
-      summary: '量化接触信息在哪类任务、哪个粒度开始不再带来稳定增益。',
-      type: 'claim',
-      phase: 'P2 实证',
-      status: 'planned',
-      ownerIds: ['ma'],
-      acceptanceCriteria: '报告任务类别、力信息粒度、成功率和置信区间的完整交互效应。',
-      weight: 2,
-      lane: 2,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-041",
+      "title": "力信息饱和边界",
+      "summary": "量化接触信息在哪类任务、哪个粒度开始不再带来稳定增益。",
+      "type": "claim",
+      "phase": "P2 实证",
+      "status": "planned",
+      "ownerIds": [
+        "ma"
+      ],
+      "acceptanceCriteria": "报告任务类别、力信息粒度、成功率和置信区间的完整交互效应。",
+      "weight": 2,
+      "lane": 2,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-042',
-      title: 'Sim 接触参数秩校准',
-      summary: '用人类力轨迹辨识足以保持失败排序的仿真接触参数。',
-      type: 'experiment',
-      phase: 'P2 实证',
-      status: 'planned',
-      ownerIds: ['zhang'],
-      acceptanceCriteria: '参数变化在真机和仿真中的失败模式排序达到预注册相关阈值。',
-      weight: 2,
-      lane: 3,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-042",
+      "title": "Sim 接触参数秩校准",
+      "summary": "用人类力轨迹辨识足以保持失败排序的仿真接触参数。",
+      "type": "experiment",
+      "phase": "P2 实证",
+      "status": "planned",
+      "ownerIds": [
+        "zhang"
+      ],
+      "acceptanceCriteria": "参数变化在真机和仿真中的失败模式排序达到预注册相关阈值。",
+      "weight": 2,
+      "lane": 3,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-043',
-      title: 'Sim / 真机失败排序一致性',
-      summary: '检验仿真失败地图是否足以指导下一轮真实示范采集。',
-      type: 'gate',
-      phase: 'P2 实证',
-      status: 'planned',
-      ownerIds: ['zhang', 'ma'],
-      acceptanceCriteria: '盲测任务上报告排序相关、Top-k 命中率和不确定性；不达标则退回真机隔夜评估。',
-      weight: 2,
-      lane: 4,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-043",
+      "title": "Sim / 真机失败排序一致性",
+      "summary": "检验仿真失败地图是否足以指导下一轮真实示范采集。",
+      "type": "gate",
+      "phase": "P2 实证",
+      "status": "planned",
+      "ownerIds": [
+        "zhang",
+        "ma"
+      ],
+      "acceptanceCriteria": "盲测任务上报告排序相关、Top-k 命中率和不确定性；不达标则退回真机隔夜评估。",
+      "weight": 2,
+      "lane": 4,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-044',
-      title: 'Claim B 最小成立',
-      summary: '证明人类力轨迹能提供可用的接触参数排序，而非追求精确系统辨识。',
-      type: 'claim',
-      phase: 'P2 实证',
-      status: 'planned',
-      ownerIds: ['zhang'],
-      acceptanceCriteria: '至少一个接触密集任务满足预注册排序指标，并公开失败边界。',
-      weight: 2,
-      lane: 5,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-044",
+      "title": "Claim B 最小成立",
+      "summary": "证明人类力轨迹能提供可用的接触参数排序，而非追求精确系统辨识。",
+      "type": "claim",
+      "phase": "P2 实证",
+      "status": "planned",
+      "ownerIds": [
+        "zhang"
+      ],
+      "acceptanceCriteria": "至少一个接触密集任务满足预注册排序指标，并公开失败边界。",
+      "weight": 2,
+      "lane": 5,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-050',
-      title: '稀疏失败回放界面',
-      summary: '向操作者展示失败区域和机器人失败视频，不给连续力控指令。',
-      type: 'task',
-      phase: 'P3 主张',
-      status: 'planned',
-      ownerIds: ['zhang', 'fei'],
-      acceptanceCriteria: '操作者可在 30 秒内理解反馈并开始下一轮录制，交互日志完整。',
-      weight: 1.5,
-      lane: 0,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-050",
+      "title": "稀疏失败回放界面",
+      "summary": "向操作者展示失败区域和机器人失败视频，不给连续力控指令。",
+      "type": "task",
+      "phase": "P3 主张",
+      "status": "planned",
+      "ownerIds": [
+        "zhang",
+        "fei"
+      ],
+      "acceptanceCriteria": "操作者可在 30 秒内理解反馈并开始下一轮录制，交互日志完整。",
+      "weight": 1.5,
+      "lane": 0,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-051',
-      title: '6-8 人 Human Pilot',
-      summary: '验证反馈是否能诱发策略级多样性，并校准正式实验时长。',
-      type: 'experiment',
-      phase: 'P3 主张',
-      status: 'planned',
-      ownerIds: ['fei', 'ma'],
-      acceptanceCriteria: '完成 counterbalance 试验，报告个体差异、违规比例、理解时间和退出原因。',
-      weight: 2,
-      lane: 1,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-051",
+      "title": "6-8 人 Human Pilot",
+      "summary": "验证反馈是否能诱发策略级多样性，并校准正式实验时长。",
+      "type": "experiment",
+      "phase": "P3 主张",
+      "status": "planned",
+      "ownerIds": [
+        "fei",
+        "ma"
+      ],
+      "acceptanceCriteria": "完成 counterbalance 试验，报告个体差异、违规比例、理解时间和退出原因。",
+      "weight": 2,
+      "lane": 1,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-052',
-      title: '覆盖 / 合成 / 筛选对照',
-      summary: '实现覆盖驱动、MimicGen 类合成和影响函数筛选基线。',
-      type: 'experiment',
-      phase: 'P3 主张',
-      status: 'planned',
-      ownerIds: ['ma', 'zhang'],
-      acceptanceCriteria: '所有方法使用相同原始数据、人类时长和训练算力预算。',
-      weight: 2,
-      lane: 3,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-052",
+      "title": "覆盖 / 合成 / 筛选对照",
+      "summary": "实现覆盖驱动、MimicGen 类合成和影响函数筛选基线。",
+      "type": "experiment",
+      "phase": "P3 主张",
+      "status": "planned",
+      "ownerIds": [
+        "ma",
+        "zhang"
+      ],
+      "acceptanceCriteria": "所有方法使用相同原始数据、人类时长和训练算力预算。",
+      "weight": 2,
+      "lane": 3,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-053',
-      title: '2x2 正式人类实验',
-      summary: '运行定向反馈与发散指令的 2x2 设计，并加入非人类对照。',
-      type: 'experiment',
-      phase: 'P3 主张',
-      status: 'planned',
-      ownerIds: ['fei', 'ma'],
-      acceptanceCriteria: '按预注册方案完成样本量、随机化、盲化分析和全部排除记录。',
-      weight: 3,
-      lane: 4,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-053",
+      "title": "2x2 正式人类实验",
+      "summary": "运行定向反馈与发散指令的 2x2 设计，并加入非人类对照。",
+      "type": "experiment",
+      "phase": "P3 主张",
+      "status": "planned",
+      "ownerIds": [
+        "fei",
+        "ma"
+      ],
+      "acceptanceCriteria": "按预注册方案完成样本量、随机化、盲化分析和全部排除记录。",
+      "weight": 3,
+      "lane": 4,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-054',
-      title: 'Claim D 统计与复现',
-      summary: '检验稀疏反馈、多样性和任务接触强度之间的因果链。',
-      type: 'claim',
-      phase: 'P3 主张',
-      status: 'planned',
-      ownerIds: ['ma', 'fei'],
-      acceptanceCriteria: '主要效应、交互效应、置信区间、失败任务和复现实验全部完成。',
-      weight: 3,
-      lane: 5,
-      updatedAt: '2026-09-05T09:50:00+08:00',
+      "id": "RG-054",
+      "title": "Claim D 统计与复现",
+      "summary": "检验稀疏反馈、多样性和任务接触强度之间的因果链。",
+      "type": "claim",
+      "phase": "P3 主张",
+      "status": "planned",
+      "ownerIds": [
+        "ma",
+        "fei"
+      ],
+      "acceptanceCriteria": "主要效应、交互效应、置信区间、失败任务和复现实验全部完成。",
+      "weight": 3,
+      "lane": 5,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
     },
     {
-      id: 'RG-060',
-      title: '论文、数据与复现实验包',
-      summary: '交付论文、匿名化数据、代码、环境和证据索引。',
-      type: 'release',
-      phase: 'P3 主张',
-      status: 'planned',
-      ownerIds: ['fei', 'zhang', 'ma', 'deng'],
-      acceptanceCriteria: '第三方按 README 可复现主要图表，所有数据均通过合规审查。',
-      weight: 2,
-      lane: 6,
-      updatedAt: '2026-09-05T09:50:00+08:00',
-    },
+      "id": "RG-060",
+      "title": "论文、数据与复现实验包",
+      "summary": "交付论文、匿名化数据、代码、环境和证据索引。",
+      "type": "release",
+      "phase": "P3 主张",
+      "status": "planned",
+      "ownerIds": [
+        "fei",
+        "zhang",
+        "ma",
+        "deng"
+      ],
+      "acceptanceCriteria": "第三方按 README 可复现主要图表，所有数据均通过合规审查。",
+      "weight": 2,
+      "lane": 6,
+      "updatedAt": "2026-09-05T09:50:00+08:00"
+    }
   ],
-  dependencies: [
-    { source: 'RG-011', target: 'RG-020', kind: 'hard' },
-    { source: 'RG-012', target: 'RG-020', kind: 'hard' },
-    { source: 'RG-013', target: 'RG-020', kind: 'hard' },
-    { source: 'RG-014', target: 'RG-020', kind: 'hard' },
-    { source: 'RG-013', target: 'RG-021', kind: 'hard' },
-    { source: 'RG-011', target: 'RG-022', kind: 'hard' },
-    { source: 'RG-012', target: 'RG-023', kind: 'hard' },
-    { source: 'RG-014', target: 'RG-023', kind: 'hard' },
-    { source: 'RG-014', target: 'RG-024', kind: 'hard' },
-    { source: 'RG-023', target: 'RG-030', kind: 'hard' },
-    { source: 'RG-024', target: 'RG-030', kind: 'hard' },
-    { source: 'RG-023', target: 'RG-031', kind: 'hard' },
-    { source: 'RG-030', target: 'RG-032', kind: 'hard' },
-    { source: 'RG-031', target: 'RG-032', kind: 'hard' },
-    { source: 'RG-020', target: 'RG-033', kind: 'hard' },
-    { source: 'RG-021', target: 'RG-033', kind: 'hard' },
-    { source: 'RG-032', target: 'RG-034', kind: 'hard' },
-    { source: 'RG-033', target: 'RG-034', kind: 'hard' },
-    { source: 'RG-020', target: 'RG-035', kind: 'hard' },
-    { source: 'RG-034', target: 'RG-035', kind: 'hard' },
-    { source: 'RG-032', target: 'RG-040', kind: 'hard' },
-    { source: 'RG-033', target: 'RG-040', kind: 'hard' },
-    { source: 'RG-034', target: 'RG-040', kind: 'hard' },
-    { source: 'RG-040', target: 'RG-041', kind: 'hard' },
-    { source: 'RG-040', target: 'RG-042', kind: 'hard' },
-    { source: 'RG-033', target: 'RG-042', kind: 'hard' },
-    { source: 'RG-042', target: 'RG-043', kind: 'hard' },
-    { source: 'RG-034', target: 'RG-043', kind: 'hard' },
-    { source: 'RG-043', target: 'RG-044', kind: 'hard' },
-    { source: 'RG-034', target: 'RG-050', kind: 'hard' },
-    { source: 'RG-035', target: 'RG-050', kind: 'hard' },
-    { source: 'RG-022', target: 'RG-051', kind: 'hard' },
-    { source: 'RG-032', target: 'RG-051', kind: 'hard' },
-    { source: 'RG-050', target: 'RG-051', kind: 'hard' },
-    { source: 'RG-034', target: 'RG-052', kind: 'hard' },
-    { source: 'RG-035', target: 'RG-052', kind: 'hard' },
-    { source: 'RG-051', target: 'RG-053', kind: 'hard' },
-    { source: 'RG-052', target: 'RG-053', kind: 'hard' },
-    { source: 'RG-041', target: 'RG-053', kind: 'soft' },
-    { source: 'RG-044', target: 'RG-053', kind: 'soft' },
-    { source: 'RG-053', target: 'RG-054', kind: 'hard' },
-    { source: 'RG-054', target: 'RG-001', kind: 'hard' },
-    { source: 'RG-001', target: 'RG-060', kind: 'hard' },
-    { source: 'RG-041', target: 'RG-060', kind: 'soft' },
-    { source: 'RG-044', target: 'RG-060', kind: 'soft' },
+  "dependencies": [
+    {
+      "source": "RG-001",
+      "target": "RG-060",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-011",
+      "target": "RG-020",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-011",
+      "target": "RG-022",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-012",
+      "target": "RG-020",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-012",
+      "target": "RG-023",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-013",
+      "target": "RG-020",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-013",
+      "target": "RG-021",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-014",
+      "target": "RG-020",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-014",
+      "target": "RG-023",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-014",
+      "target": "RG-024",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-020",
+      "target": "RG-033",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-020",
+      "target": "RG-035",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-021",
+      "target": "RG-033",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-022",
+      "target": "RG-051",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-023",
+      "target": "RG-030",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-023",
+      "target": "RG-031",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-024",
+      "target": "RG-030",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-030",
+      "target": "RG-032",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-031",
+      "target": "RG-032",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-032",
+      "target": "RG-034",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-032",
+      "target": "RG-040",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-032",
+      "target": "RG-051",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-033",
+      "target": "RG-034",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-033",
+      "target": "RG-040",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-033",
+      "target": "RG-042",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-035",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-040",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-043",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-050",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-034",
+      "target": "RG-052",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-035",
+      "target": "RG-050",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-035",
+      "target": "RG-052",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-040",
+      "target": "RG-041",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-040",
+      "target": "RG-042",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-041",
+      "target": "RG-053",
+      "kind": "soft"
+    },
+    {
+      "source": "RG-041",
+      "target": "RG-060",
+      "kind": "soft"
+    },
+    {
+      "source": "RG-042",
+      "target": "RG-043",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-043",
+      "target": "RG-044",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-044",
+      "target": "RG-053",
+      "kind": "soft"
+    },
+    {
+      "source": "RG-044",
+      "target": "RG-060",
+      "kind": "soft"
+    },
+    {
+      "source": "RG-050",
+      "target": "RG-051",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-051",
+      "target": "RG-053",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-052",
+      "target": "RG-053",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-053",
+      "target": "RG-054",
+      "kind": "hard"
+    },
+    {
+      "source": "RG-054",
+      "target": "RG-001",
+      "kind": "hard"
+    }
   ],
-  evidence: [
+  "evidence": [
     {
-      id: 'EV-001',
-      workItemId: 'RG-011',
-      actorId: 'fei',
-      title: '工厂需求、试点路径和合作职责已写入导师评审稿',
-      kind: 'document',
-      url: '../doc/PPT/PPT_raw.md',
-      accepted: true,
-      createdAt: '2026-08-31T11:00:00+08:00',
+      "id": "EV-001",
+      "workItemId": "RG-011",
+      "actorId": "fei",
+      "title": "工厂需求、试点路径和合作职责已写入导师评审稿",
+      "kind": "document",
+      "url": "../doc/PPT/PPT_raw.md",
+      "accepted": true,
+      "createdAt": "2026-08-31T11:00:00+08:00",
+      "source": "legacy",
+      "audit": {
+        "decision": "accepted",
+        "reviewerId": null,
+        "reviewedAt": "2026-08-31T11:00:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+        "legacy": true
+      }
     },
     {
-      id: 'EV-002',
-      workItemId: 'RG-012',
-      actorId: 'zhang',
-      title: '共享中间层与动作/场景双管线方案',
-      kind: 'document',
-      url: '../doc/PPT/PPT_raw.md',
-      accepted: true,
-      createdAt: '2026-08-31T11:10:00+08:00',
+      "id": "EV-002",
+      "workItemId": "RG-012",
+      "actorId": "zhang",
+      "title": "共享中间层与动作/场景双管线方案",
+      "kind": "document",
+      "url": "../doc/PPT/PPT_raw.md",
+      "accepted": true,
+      "createdAt": "2026-08-31T11:10:00+08:00",
+      "source": "legacy",
+      "audit": {
+        "decision": "accepted",
+        "reviewerId": null,
+        "reviewedAt": "2026-08-31T11:10:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+        "legacy": true
+      }
     },
     {
-      id: 'EV-003',
-      workItemId: 'RG-013',
-      actorId: 'ma',
-      title: '纯视觉、接触与关节角 A/B/C 消融框架',
-      kind: 'document',
-      url: '../doc/PPT/PPT_raw.md',
-      accepted: true,
-      createdAt: '2026-08-31T11:20:00+08:00',
+      "id": "EV-003",
+      "workItemId": "RG-013",
+      "actorId": "ma",
+      "title": "纯视觉、接触与关节角 A/B/C 消融框架",
+      "kind": "document",
+      "url": "../doc/PPT/PPT_raw.md",
+      "accepted": true,
+      "createdAt": "2026-08-31T11:20:00+08:00",
+      "source": "legacy",
+      "audit": {
+        "decision": "accepted",
+        "reviewerId": null,
+        "reviewedAt": "2026-08-31T11:20:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+        "legacy": true
+      }
     },
     {
-      id: 'EV-004',
-      workItemId: 'RG-014',
-      actorId: 'deng',
-      title: 'FSR、IMU、统一时间戳和接触锚点方案',
-      kind: 'document',
-      url: '../头戴式EGO采集设备方案.md',
-      accepted: true,
-      createdAt: '2026-08-31T11:30:00+08:00',
-    },
+      "id": "EV-004",
+      "workItemId": "RG-014",
+      "actorId": "deng",
+      "title": "FSR、IMU、统一时间戳和接触锚点方案",
+      "kind": "document",
+      "url": "../头戴式EGO采集设备方案.md",
+      "accepted": true,
+      "createdAt": "2026-08-31T11:30:00+08:00",
+      "source": "legacy",
+      "audit": {
+        "decision": "accepted",
+        "reviewerId": null,
+        "reviewedAt": "2026-08-31T11:30:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+        "legacy": true
+      }
+    }
   ],
-  events: [
+  "events": [
     {
-      id: 'AE-004',
-      actorId: 'deng',
-      action: 'evidence.accepted',
-      workItemId: 'RG-014',
-      summary: '同步硬件方案初稿通过文档审计',
-      createdAt: '2026-08-31T11:30:00+08:00',
+      "id": "AE-004",
+      "actorId": "deng",
+      "action": "evidence.accepted",
+      "workItemId": "RG-014",
+      "summary": "同步硬件方案初稿通过文档审计",
+      "createdAt": "2026-08-31T11:30:00+08:00"
     },
     {
-      id: 'AE-003',
-      actorId: 'ma',
-      action: 'evidence.accepted',
-      workItemId: 'RG-013',
-      summary: 'A/B/C 实验框架初稿通过文档审计',
-      createdAt: '2026-08-31T11:20:00+08:00',
+      "id": "AE-003",
+      "actorId": "ma",
+      "action": "evidence.accepted",
+      "workItemId": "RG-013",
+      "summary": "A/B/C 实验框架初稿通过文档审计",
+      "createdAt": "2026-08-31T11:20:00+08:00"
     },
     {
-      id: 'AE-002',
-      actorId: 'zhang',
-      action: 'evidence.accepted',
-      workItemId: 'RG-012',
-      summary: '动作与场景双管线初稿通过文档审计',
-      createdAt: '2026-08-31T11:10:00+08:00',
+      "id": "AE-002",
+      "actorId": "zhang",
+      "action": "evidence.accepted",
+      "workItemId": "RG-012",
+      "summary": "动作与场景双管线初稿通过文档审计",
+      "createdAt": "2026-08-31T11:10:00+08:00"
     },
     {
-      id: 'AE-001',
-      actorId: 'fei',
-      action: 'evidence.accepted',
-      workItemId: 'RG-011',
-      summary: '工厂需求与试点路线初稿通过文档审计',
-      createdAt: '2026-08-31T11:00:00+08:00',
-    },
+      "id": "AE-001",
+      "actorId": "fei",
+      "action": "evidence.accepted",
+      "workItemId": "RG-011",
+      "summary": "工厂需求与试点路线初稿通过文档审计",
+      "createdAt": "2026-08-31T11:00:00+08:00"
+    }
   ],
-  updatedAt: '2026-09-05T09:50:00+08:00',
+  "updatedAt": "2026-09-05T09:50:00+08:00"
 }

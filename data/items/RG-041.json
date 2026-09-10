@@ -1,0 +1,21 @@
+{
+  "id": "RG-041",
+  "title": "力信息饱和边界",
+  "summary": "量化接触信息在哪类任务、哪个粒度开始不再带来稳定增益。",
+  "type": "claim",
+  "phase": "P2 实证",
+  "status": "planned",
+  "ownerIds": [
+    "ma"
+  ],
+  "acceptanceCriteria": "报告任务类别、力信息粒度、成功率和置信区间的完整交互效应。",
+  "weight": 2,
+  "lane": 2,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-040",
+      "kind": "hard"
+    }
+  ]
+}

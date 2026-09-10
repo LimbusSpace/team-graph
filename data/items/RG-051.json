@@ -1,0 +1,30 @@
+{
+  "id": "RG-051",
+  "title": "6-8 人 Human Pilot",
+  "summary": "验证反馈是否能诱发策略级多样性，并校准正式实验时长。",
+  "type": "experiment",
+  "phase": "P3 主张",
+  "status": "planned",
+  "ownerIds": [
+    "fei",
+    "ma"
+  ],
+  "acceptanceCriteria": "完成 counterbalance 试验，报告个体差异、违规比例、理解时间和退出原因。",
+  "weight": 2,
+  "lane": 1,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-022",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-032",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-050",
+      "kind": "hard"
+    }
+  ]
+}

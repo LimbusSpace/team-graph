@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-09-10T10:45:23.481Z",
+  "project": "具身项目依赖台",
+  "progress": 5,
+  "completed": 4,
+  "total": 26,
+  "frontier": 4,
+  "blocked": 1,
+  "pendingEvidence": 1,
+  "active": [
+    {
+      "id": "RG-035",
+      "title": "失败类型与多样性指标",
+      "status": "review",
+      "owners": [
+        "zhang",
+        "ma"
+      ]
+    }
+  ]
+}

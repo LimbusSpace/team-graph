@@ -1,0 +1,1 @@
+{"name":"具身项目依赖台","short_name":"项目依赖台","description":"团队共享的依赖、证据与进度审计工作台","start_url":"/team-graph/","display":"standalone","background_color":"#f4f6f2","theme_color":"#f4f6f2","lang":"en","scope":"/team-graph/","icons":[{"src":"/project-mark.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]}

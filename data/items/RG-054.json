@@ -1,0 +1,22 @@
+{
+  "id": "RG-054",
+  "title": "Claim D 统计与复现",
+  "summary": "检验稀疏反馈、多样性和任务接触强度之间的因果链。",
+  "type": "claim",
+  "phase": "P3 主张",
+  "status": "planned",
+  "ownerIds": [
+    "ma",
+    "fei"
+  ],
+  "acceptanceCriteria": "主要效应、交互效应、置信区间、失败任务和复现实验全部完成。",
+  "weight": 3,
+  "lane": 5,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-053",
+      "kind": "hard"
+    }
+  ]
+}

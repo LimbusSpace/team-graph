@@ -1,0 +1,25 @@
+{
+  "id": "RG-042",
+  "title": "Sim 接触参数秩校准",
+  "summary": "用人类力轨迹辨识足以保持失败排序的仿真接触参数。",
+  "type": "experiment",
+  "phase": "P2 实证",
+  "status": "planned",
+  "ownerIds": [
+    "zhang"
+  ],
+  "acceptanceCriteria": "参数变化在真机和仿真中的失败模式排序达到预注册相关阈值。",
+  "weight": 2,
+  "lane": 3,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-040",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-033",
+      "kind": "hard"
+    }
+  ]
+}

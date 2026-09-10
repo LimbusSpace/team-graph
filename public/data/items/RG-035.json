@@ -1,0 +1,43 @@
+{
+  "id": "RG-035",
+  "title": "失败类型与多样性指标",
+  "state": "planned",
+  "type": "gate",
+  "phase": "P2 实证",
+  "owners": [
+    "zhang",
+    "ma"
+  ],
+  "acceptance": "指标与人工标注达到预注册一致性，并能区分空间变化与接触策略变化。",
+  "hard_dependencies": [
+    {
+      "id": "RG-020",
+      "state": "ready"
+    },
+    {
+      "id": "RG-034",
+      "state": "planned"
+    }
+  ],
+  "unlocks": [
+    "RG-050",
+    "RG-052"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "定义空间失败、接触失败和策略级多样性的可计算表示。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

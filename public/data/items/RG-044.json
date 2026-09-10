@@ -1,0 +1,35 @@
+{
+  "id": "RG-044",
+  "title": "Claim B 最小成立",
+  "state": "planned",
+  "type": "claim",
+  "phase": "P2 实证",
+  "owners": [
+    "zhang"
+  ],
+  "acceptance": "至少一个接触密集任务满足预注册排序指标，并公开失败边界。",
+  "hard_dependencies": [
+    {
+      "id": "RG-043",
+      "state": "planned"
+    }
+  ],
+  "unlocks": [],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "证明人类力轨迹能提供可用的接触参数排序，而非追求精确系统辨识。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

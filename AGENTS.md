@@ -1,46 +1,46 @@
-# Team Graph Polyhook
+# Agent 操作契约
 
-这是基于 `polyhook` 的跨 Agent Hook，不是 Git 原生 hook。业务脚本只写一份，`@polyhook/sdk` 负责适配不同 Agent 的 stdin/stdout 格式。目前支持 Codex、Claude Code、Cursor 和 Windsurf。
+Team Graph 是 Git 驱动的轻量工作流：事实源在 `data/`，前端产物由构建生成。
+所有任务操作通过 `scripts/task.mjs` 完成，它负责校验状态规则并返回短回执。
 
-安装前请在 Team Graph 仓库执行一次 `npm install`，因为共享脚本从 Team Graph 的依赖中加载 `@polyhook/sdk`。
+## 七条规则
 
-各 Agent 的项目级配置位置是：
+1. **开始任务前先运行 `node scripts/task.mjs context <RG-xxx>`。**
+   它只返回完成当前任务必需的内容（状态、验收标准、硬依赖、证据计数、允许动作）。
+2. **不要读取全量项目图。** 只有跨任务规划才看 `public/data/project.json`；
+   平时用 `task list --frontier` 找可开工任务。
+3. **不要直接编辑 `public/data/` 和 `src/data/seed.ts`。** 它们是派生产物，
+   每次状态变化都会被重建，手改会被覆盖。
+4. **状态与证据只通过 task 命令修改**，不要手写 JSON：
 
-- Codex：`<项目根目录>/.codex/hooks.json`
-- Claude Code：`<项目根目录>/.claude/settings.json`
-- Cursor：`<项目根目录>/.cursor/hooks.json`
-- Windsurf：`<项目根目录>/.windsurf/hooks.json`
+   ```bash
+   node scripts/task.mjs evidence add RG-023 --kind code --title "改动摘要" --ref <commit-sha>
+   node scripts/task.mjs submit-audit RG-023
+   node scripts/task.mjs status set RG-023 in_progress --actor <成员ID>
+   ```
 
-全局配置也可以使用，但会影响该用户的所有项目。团队图谱默认安装项目级配置。
+5. **不要自行批准审计或设置 done。** `evidence accept` / `complete` 需要真实审计人
+   （`--reviewer`），授权以受保护的 PR review 为准；JSON 里自填的名字不构成授权。
+6. **默认只查询与当前任务有关的活动**：`task context RG-xxx --include history`，
+   不要读 `data/events/` 全部分片。
+7. **完成后运行 `node scripts/task.mjs validate`，并留一份交接摘要**：
 
-不要把它放到 `.git/hooks`：那里是 Git 原生 Hook，不能接收各 Agent 的生命周期事件。
+   ```bash
+   node scripts/task.mjs handoff RG-023 --file handoff.md --actor <成员ID>
+   ```
 
-共享业务脚本会被安装到 `<项目根目录>/.team-graph/hooks/team-graph-polyhook.cjs`。各 Agent 配置只负责在工具执行后调用它。
+   交接模板：目标 / 已完成事项 / 涉及文件 / 测试结果 / 未解决问题 / 下一步。
+   长任务务必交接，下个会话用 `task context RG-xxx --include handoff` 读取，
+   不要把历史日志重新喂给模型。
 
-## 安装到代码仓库
+## 其他约定
 
-```powershell
-powershell -ExecutionPolicy Bypass -File "C:\path\to\team-graph\scripts\install-polyhook.ps1" `
-  -TargetRepoPath "C:\path\to\code-repo" `
-  -TeamGraphPath "C:\path\to\team-graph" `
-  -DefaultNode "RG-032" `
-  -Agent all `
-  -AutoPush
-```
-
-`-Agent` 可以是 `all`、`codex`、`claude-code`、`cursor` 或 `windsurf`。不传 `-AutoPush` 时只更新并提交 Team Graph 状态，不推送状态仓库。`-AutoPush` 是显式开启的外部写操作，会把状态仓库推送到 GitHub Pages 的源仓库。
-
-如果目标仓库已有对应 Agent 配置，安装器会拒绝覆盖，需人工把对应配置合并到现有 hooks。卸载：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File "C:\path\to\team-graph\scripts\install-polyhook.ps1" `
-  -TargetRepoPath "C:\path\to\code-repo" `
-  -Agent all `
-  -Uninstall
-```
-
-安装 Codex 配置后，需要在 Codex 中使用 `/hooks` 审查并信任新的 hook。所有适配器都会在 Agent 执行 shell 命令后调用 polyhook；脚本只处理包含 `git add`、`git commit` 或 `git push` 的 Bash 事件。节点编号优先从命令、当前分支或最近提交信息读取，也可以用 `-DefaultNode` 指定。
-
-安装器写入的 `.team-graph/team-graph.local.json` 只保存本机路径和推送开关，并自动加入 Git 的 `.git/info/exclude`，不会把个人绝对路径提交给团队。
-
-项目地址：<https://github.com/polyhook/polyhook>。polyhook 的统一事件会把不同工具归一化为 `event.tool`、`event.input` 和 `event.caller`，Team Graph 不再读取某个 Agent 私有的 `tool_input` 字段。
+- commit message 里带上任务编号（如 `RG-023: fix drift detector`），
+  push 后会自动归集为候选证据；一条消息只写自己负责的编号。
+- `git add` / `git commit` 不写入共享任务历史；`git push` 才汇总登记。
+- 写操作的短回执形如 `{ok, id, changed, next}`；被拒绝时会返回
+  `HARD_DEPENDENCY_OPEN`、`NO_ACCEPTED_EVIDENCE` 这类结构化错误码，
+  按提示补条件即可，不要绕过脚本直接改文件。
+- 需要防并发冲突时给写命令加 `--expect-revision <task context 返回的 revision>`，
+  版本不一致会被拒绝，重新读取后再试。
+- `experimental/` 目录是未启用方案（含 Supabase），不要修改，也不要参考其规则。

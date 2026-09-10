@@ -5,17 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/build-data.mjs && tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
-    "seed:generate": "tsx scripts/generate-seed-sql.ts",
-    "github:export": "tsx scripts/export-github-state.ts",
-    "github:status": "node scripts/export-status.cjs"
+    "task": "node scripts/task.mjs",
+    "data:build": "node scripts/build-data.mjs",
+    "data:check": "node scripts/build-data.mjs --check",
+    "validate": "node scripts/task.mjs validate",
+    "github:reconcile": "node scripts/reconcile-github.mjs"
   },
   "dependencies": {
     "@polyhook/sdk": "^0.1.11",
-    "@supabase/supabase-js": "^2.115.0",
     "@xyflow/react": "^12.11.6",
     "lucide-react": "^1.41.0",
     "react": "^19.2.8",

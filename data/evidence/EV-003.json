@@ -1,0 +1,18 @@
+{
+  "id": "EV-003",
+  "workItemId": "RG-013",
+  "actorId": "ma",
+  "title": "纯视觉、接触与关节角 A/B/C 消融框架",
+  "kind": "document",
+  "url": "../doc/PPT/PPT_raw.md",
+  "accepted": true,
+  "createdAt": "2026-08-31T11:20:00+08:00",
+  "source": "legacy",
+  "audit": {
+    "decision": "accepted",
+    "reviewerId": null,
+    "reviewedAt": "2026-08-31T11:20:00+08:00",
+    "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+    "legacy": true
+  }
+}

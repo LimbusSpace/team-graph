@@ -1,0 +1,21 @@
+{
+  "id": "RG-022",
+  "title": "受试者与数据合规方案",
+  "summary": "明确知情同意、数据归属、隐私遮蔽和退出机制。",
+  "type": "gate",
+  "phase": "P0 定义",
+  "status": "ready",
+  "ownerIds": [
+    "fei"
+  ],
+  "acceptanceCriteria": "伦理流程、同意书、数据保留期限和访问权限通过导师或机构审核。",
+  "weight": 1,
+  "lane": 6,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-011",
+      "kind": "hard"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "RG-012",
+  "title": "动作与场景双管线初稿",
+  "summary": "定义共享视觉中间层、动作数据分支和可交互场景分支。",
+  "type": "task",
+  "phase": "P0 定义",
+  "status": "done",
+  "ownerIds": [
+    "zhang"
+  ],
+  "acceptanceCriteria": "输入、共享缓存、两类输出和关键质量门均有明确接口。",
+  "weight": 0.5,
+  "lane": 1,
+  "updatedAt": "2026-08-31T11:10:00+08:00"
+}

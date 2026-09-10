@@ -9,38 +9,122 @@ import type {
   WorkStatus,
 } from '../types'
 
-const stateUrl = `${import.meta.env.BASE_URL}data/project.json`
+/**
+ * 数据同步策略（静态轮询，GitHub-only 架构）：
+ *
+ *   轮询 manifest.json → revision 未变：结束
+ *                      → revision 变了：加载 project.json
+ *   点开任务详情时才需要的重数据已在 project.json 中，30s 内足够新鲜。
+ *
+ * - 页面隐藏时暂停轮询，重新可见立即检查一次；
+ * - 请求失败按 30s → 60s → 120s → 240s 退避重试；
+ * - 只接受比当前 revision 新的响应，避免乱序回退；
+ * - 这是带宽/渲染优化，不是实时同步：界面明确显示“最后同步时间”。
+ */
+
+const BASE = import.meta.env.BASE_URL
+const MANIFEST_URL = `${BASE}data/manifest.json`
+const SNAPSHOT_URL = `${BASE}data/project.json`
+const POLL_INTERVAL_MS = 30_000
+const MAX_BACKOFF_MS = 240_000
+
+interface Manifest {
+  version: number
+  revision: string
+  generatedAt: string
+}
 
 export function useProject() {
   const [snapshot, setSnapshot] = useState<ProjectSnapshot>(seedSnapshot)
   const [syncState, setSyncState] = useState<SyncState>('connecting')
   const [syncError, setSyncError] = useState('')
+  const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null)
+  const revisionRef = useRef<string | null>(null)
+  const requestSeq = useRef(0)
   const refreshPending = useRef(false)
+  const failureCount = useRef(0)
+
+  const applySnapshot = useCallback((next: ProjectSnapshot) => {
+    setSnapshot(next)
+    if (next.revision) revisionRef.current = next.revision
+  }, [])
+
+  const loadSnapshot = useCallback(async () => {
+    const seq = ++requestSeq.current
+    const response = await fetch(`${SNAPSHOT_URL}?rev=${revisionRef.current ?? 'init'}`, { cache: 'no-store' })
+    if (!response.ok) throw new Error(`状态文件加载失败（${response.status}）`)
+    const remote = await response.json() as ProjectSnapshot
+    if (seq !== requestSeq.current) return // 乱序响应，丢弃
+    // revision 哈希只判断“是否不同”；manifest 已确认有变化才会走到这里。
+    if (!revisionRef.current || !remote.revision || remote.revision !== revisionRef.current) {
+      applySnapshot(remote)
+    }
+    setLastSyncedAt(new Date().toISOString())
+    setSyncState('live')
+    setSyncError('')
+  }, [applySnapshot])
 
   const refresh = useCallback(async () => {
     if (refreshPending.current) return
     refreshPending.current = true
     try {
-      const response = await fetch(`${stateUrl}?t=${Date.now()}`, { cache: 'no-store' })
-      if (!response.ok) throw new Error(`状态文件加载失败（${response.status}）`)
-      const remote = await response.json() as ProjectSnapshot
-      setSnapshot(remote)
-      setSyncState('live')
-      setSyncError('')
+      // manifest 很小；revision 没变就不下载整张图。
+      const response = await fetch(`${MANIFEST_URL}?t=${Date.now()}`, { cache: 'no-store' })
+      if (!response.ok) throw new Error(`manifest 加载失败（${response.status}）`)
+      const manifest = await response.json() as Manifest
+      if (revisionRef.current && manifest.revision === revisionRef.current) {
+        setLastSyncedAt(new Date().toISOString())
+        setSyncState('live')
+        setSyncError('')
+      } else {
+        await loadSnapshot()
+      }
+      failureCount.current = 0
     } catch (error) {
+      failureCount.current += 1
       setSyncState('error')
-      setSyncError(error instanceof Error ? error.message : '无法连接共享数据库')
+      setSyncError(error instanceof Error ? error.message : '无法加载共享状态')
     } finally {
       refreshPending.current = false
     }
-  }, [])
+  }, [loadSnapshot])
 
   useEffect(() => {
-    const initialRefresh = window.setTimeout(() => void refresh(), 0)
-    const interval = window.setInterval(() => void refresh(), 30_000)
+    let timer: number | undefined
+    let cancelled = false
+
+    const schedule = () => {
+      const backoff = Math.min(POLL_INTERVAL_MS * 2 ** failureCount.current, MAX_BACKOFF_MS)
+      timer = window.setTimeout(() => void tick(), document.hidden ? backoff * 4 : backoff)
+    }
+
+    const tick = async () => {
+      if (cancelled) return
+      if (document.hidden) {
+        schedule() // 页面隐藏：不请求，只顺延
+        return
+      }
+      await refresh()
+      if (!cancelled) schedule()
+    }
+
+    const onVisible = () => {
+      if (document.hidden) return
+      window.clearTimeout(timer)
+      window.setTimeout(() => {
+        void refresh().then(() => {
+          if (!cancelled) schedule()
+        })
+      }, 0)
+    }
+
+    timer = window.setTimeout(() => void tick(), 0)
+    document.addEventListener('visibilitychange', onVisible)
+
     return () => {
-      window.clearTimeout(initialRefresh)
-      window.clearInterval(interval)
+      cancelled = true
+      window.clearTimeout(timer)
+      document.removeEventListener('visibilitychange', onVisible)
     }
   }, [refresh])
 
@@ -62,7 +146,7 @@ export function useProject() {
         }
       }
 
-      throw new Error('GitHub-only 模式请通过带 RG 编号的提交或 PR 更新状态。')
+      throw new Error('看板为只读：请运行 node scripts/task.mjs（如 submit-audit / complete）或提交带 RG 编号的 PR。')
     },
     [snapshot],
   )
@@ -70,7 +154,7 @@ export function useProject() {
   const addWorkItem = useCallback(
     async (input: NewWorkItemInput) => {
       void input
-      throw new Error('GitHub-only 模式请通过 GitHub 提交变更。')
+      throw new Error('看板为只读：请运行 node scripts/task.mjs item create --title ... 或直接提交 PR 修改 data/items/。')
     },
     [],
   )
@@ -78,7 +162,7 @@ export function useProject() {
   const addEvidence = useCallback(
     async (input: NewEvidenceInput) => {
       void input
-      throw new Error('GitHub-only 模式请通过 GitHub 提交或 PR 添加证据。')
+      throw new Error('看板为只读：请运行 node scripts/task.mjs evidence add <RG-xxx> --kind code --title ...')
     },
     [],
   )
@@ -88,7 +172,7 @@ export function useProject() {
       const evidence = snapshot.evidence.find((entry) => entry.id === evidenceId)
       if (!evidence || evidence.accepted) return
 
-      throw new Error('GitHub-only 模式请通过修改状态文件的 PR 完成审计。')
+      throw new Error('看板为只读：审计请运行 node scripts/task.mjs evidence accept <EV-xxx> --reviewer <成员ID>，并让受保护的 PR review 记录授权。')
     },
     [snapshot],
   )
@@ -98,6 +182,7 @@ export function useProject() {
       snapshot,
       syncState,
       syncError,
+      lastSyncedAt,
       updateStatus,
       addWorkItem,
       addEvidence,
@@ -109,6 +194,7 @@ export function useProject() {
       acceptEvidence,
       addEvidence,
       addWorkItem,
+      lastSyncedAt,
       refresh,
       snapshot,
       syncError,

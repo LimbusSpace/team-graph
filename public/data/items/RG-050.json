@@ -1,0 +1,42 @@
+{
+  "id": "RG-050",
+  "title": "稀疏失败回放界面",
+  "state": "planned",
+  "type": "task",
+  "phase": "P3 主张",
+  "owners": [
+    "zhang",
+    "fei"
+  ],
+  "acceptance": "操作者可在 30 秒内理解反馈并开始下一轮录制，交互日志完整。",
+  "hard_dependencies": [
+    {
+      "id": "RG-034",
+      "state": "planned"
+    },
+    {
+      "id": "RG-035",
+      "state": "planned"
+    }
+  ],
+  "unlocks": [
+    "RG-051"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "向操作者展示失败区域和机器人失败视频，不给连续力控指令。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

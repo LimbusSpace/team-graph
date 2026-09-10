@@ -297,6 +297,7 @@
 .evidence-row small { color: var(--ink-soft); font-size: 9px; }
 .evidence-state { display: inline-flex; align-items: center; gap: 3px; color: #725b24; font-size: 9px; }
 .evidence-state.accepted { color: var(--green); }
+.evidence-state.declined { color: #a33b2e; }
 .evidence-actions { display: flex; align-items: center; gap: 6px; }
 .evidence-actions a,
 .evidence-actions button { min-width: 30px; min-height: 30px; display: grid; place-items: center; color: var(--teal); background: transparent; border: 1px solid var(--line); border-radius: 4px; font-size: 10px; text-decoration: none; }

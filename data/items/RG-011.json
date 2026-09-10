@@ -1,0 +1,15 @@
+{
+  "id": "RG-011",
+  "title": "工厂需求与试点路线初稿",
+  "summary": "定义目标工况、合作入口和从实验室到工厂的试点路径。",
+  "type": "task",
+  "phase": "P0 定义",
+  "status": "done",
+  "ownerIds": [
+    "fei"
+  ],
+  "acceptanceCriteria": "形成目标用户、试点范围、合作门槛和合规风险清单。",
+  "weight": 0.5,
+  "lane": 0,
+  "updatedAt": "2026-08-31T11:00:00+08:00"
+}

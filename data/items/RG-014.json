@@ -1,0 +1,15 @@
+{
+  "id": "RG-014",
+  "title": "FSR / IMU / 同步方案初稿",
+  "summary": "定义接触、姿态、视频的采集硬件和统一时间轴。",
+  "type": "task",
+  "phase": "P0 定义",
+  "status": "done",
+  "ownerIds": [
+    "deng"
+  ],
+  "acceptanceCriteria": "传感器选型、采样率、时间戳和同步验收方法均已记录。",
+  "weight": 0.5,
+  "lane": 3,
+  "updatedAt": "2026-08-31T11:30:00+08:00"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "RG-043",
+  "title": "Sim / 真机失败排序一致性",
+  "summary": "检验仿真失败地图是否足以指导下一轮真实示范采集。",
+  "type": "gate",
+  "phase": "P2 实证",
+  "status": "planned",
+  "ownerIds": [
+    "zhang",
+    "ma"
+  ],
+  "acceptanceCriteria": "盲测任务上报告排序相关、Top-k 命中率和不确定性；不达标则退回真机隔夜评估。",
+  "weight": 2,
+  "lane": 4,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-042",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-034",
+      "kind": "hard"
+    }
+  ]
+}

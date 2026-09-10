@@ -1,0 +1,18 @@
+{
+  "id": "EV-001",
+  "workItemId": "RG-011",
+  "actorId": "fei",
+  "title": "工厂需求、试点路径和合作职责已写入导师评审稿",
+  "kind": "document",
+  "url": "../doc/PPT/PPT_raw.md",
+  "accepted": true,
+  "createdAt": "2026-08-31T11:00:00+08:00",
+  "source": "legacy",
+  "audit": {
+    "decision": "accepted",
+    "reviewerId": null,
+    "reviewedAt": "2026-08-31T11:00:00+08:00",
+    "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+    "legacy": true
+  }
+}

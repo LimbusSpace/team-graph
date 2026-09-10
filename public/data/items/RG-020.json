@@ -1,0 +1,51 @@
+{
+  "id": "RG-020",
+  "title": "冻结 MVP 任务与验收口径",
+  "state": "ready",
+  "type": "gate",
+  "phase": "P0 定义",
+  "owners": [
+    "ma",
+    "fei"
+  ],
+  "acceptance": "团队签字确认 2-3 个任务、自动复位条件、成功判据和人类时间预算。",
+  "hard_dependencies": [
+    {
+      "id": "RG-011",
+      "state": "done"
+    },
+    {
+      "id": "RG-012",
+      "state": "done"
+    },
+    {
+      "id": "RG-013",
+      "state": "done"
+    },
+    {
+      "id": "RG-014",
+      "state": "done"
+    }
+  ],
+  "unlocks": [
+    "RG-033",
+    "RG-035"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "锁定两指夹爪任务、具身约束、成功定义和数据效率口径。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

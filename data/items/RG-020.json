@@ -1,0 +1,34 @@
+{
+  "id": "RG-020",
+  "title": "冻结 MVP 任务与验收口径",
+  "summary": "锁定两指夹爪任务、具身约束、成功定义和数据效率口径。",
+  "type": "gate",
+  "phase": "P0 定义",
+  "status": "ready",
+  "ownerIds": [
+    "ma",
+    "fei"
+  ],
+  "acceptanceCriteria": "团队签字确认 2-3 个任务、自动复位条件、成功判据和人类时间预算。",
+  "weight": 1,
+  "lane": 4,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-011",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-012",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-013",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-014",
+      "kind": "hard"
+    }
+  ]
+}

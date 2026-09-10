@@ -236,15 +236,20 @@ export function AuditDrawer({
           {evidence.length === 0 && <p className="empty-line">还没有证据</p>}
           {evidence.map((entry) => {
             const actor = snapshot.members.find((member) => member.id === entry.actorId)
+            const declined = entry.audit?.decision === 'declined'
             return (
               <article key={entry.id} className="evidence-row">
                 <div>
-                  <span className={`evidence-state ${entry.accepted ? 'accepted' : ''}`}>
+                  <span className={`evidence-state ${entry.accepted ? 'accepted' : declined ? 'declined' : ''}`}>
                     {entry.accepted ? <Check size={12} /> : null}
-                    {entry.accepted ? '已通过' : '待审计'}
+                    {entry.accepted ? '已通过' : declined ? '已退回' : '待审计'}
                   </span>
                   <strong>{entry.title}</strong>
-                  <small>{actor?.name ?? '未知成员'} · {formatRelativeTime(entry.createdAt)}</small>
+                  <small>
+                    {actor?.name ?? '未知成员'} · {formatRelativeTime(entry.createdAt)}
+                    {entry.audit?.reviewerId ? ` · 审计 ${snapshot.members.find((member) => member.id === entry.audit?.reviewerId)?.initials ?? entry.audit.reviewerId}` : ''}
+                    {entry.audit?.note ? ` · ${entry.audit.note}` : ''}
+                  </small>
                 </div>
                 <div className="evidence-actions">
                   {entry.url && (

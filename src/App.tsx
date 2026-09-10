@@ -39,6 +39,7 @@ function App() {
     snapshot,
     syncState,
     syncError,
+    lastSyncedAt,
     updateStatus,
     addWorkItem,
     addEvidence,
@@ -58,8 +59,9 @@ function App() {
   const blockedItems = snapshot.items.filter((item) => item.status === 'blocked')
   const reviewEvidence = snapshot.evidence.filter((entry) => !entry.accepted)
 
+  // 这是静态轮询不是实时推送：明确显示最后同步时间，避免造成实时性的错觉。
   const syncLabel = syncState === 'live'
-    ? '实时同步'
+    ? `最后同步 ${lastSyncedAt ? formatRelativeTime(lastSyncedAt) : '刚刚'}`
     : syncState === 'connecting'
       ? '正在连接'
       : syncState === 'error'
@@ -89,7 +91,10 @@ function App() {
         </div>
 
         <div className="project-state">
-          <span className={`sync-indicator sync-${syncState}`}>
+          <span
+            className={`sync-indicator sync-${syncState}`}
+            title={snapshot.revision ? `数据版本 ${snapshot.revision}` : undefined}
+          >
             {syncState === 'live' ? <Cloud size={15} /> : <CloudOff size={15} />}
             {syncLabel}
           </span>

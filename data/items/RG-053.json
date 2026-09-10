@@ -1,0 +1,34 @@
+{
+  "id": "RG-053",
+  "title": "2x2 正式人类实验",
+  "summary": "运行定向反馈与发散指令的 2x2 设计，并加入非人类对照。",
+  "type": "experiment",
+  "phase": "P3 主张",
+  "status": "planned",
+  "ownerIds": [
+    "fei",
+    "ma"
+  ],
+  "acceptanceCriteria": "按预注册方案完成样本量、随机化、盲化分析和全部排除记录。",
+  "weight": 3,
+  "lane": 4,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-051",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-052",
+      "kind": "hard"
+    },
+    {
+      "id": "RG-041",
+      "kind": "soft"
+    },
+    {
+      "id": "RG-044",
+      "kind": "soft"
+    }
+  ]
+}

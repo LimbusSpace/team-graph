@@ -1,0 +1,42 @@
+{
+  "id": "RG-043",
+  "title": "Sim / 真机失败排序一致性",
+  "state": "planned",
+  "type": "gate",
+  "phase": "P2 实证",
+  "owners": [
+    "zhang",
+    "ma"
+  ],
+  "acceptance": "盲测任务上报告排序相关、Top-k 命中率和不确定性；不达标则退回真机隔夜评估。",
+  "hard_dependencies": [
+    {
+      "id": "RG-042",
+      "state": "planned"
+    },
+    {
+      "id": "RG-034",
+      "state": "planned"
+    }
+  ],
+  "unlocks": [
+    "RG-044"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "检验仿真失败地图是否足以指导下一轮真实示范采集。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

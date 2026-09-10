@@ -1,0 +1,18 @@
+{
+  "id": "EV-004",
+  "workItemId": "RG-014",
+  "actorId": "deng",
+  "title": "FSR、IMU、统一时间戳和接触锚点方案",
+  "kind": "document",
+  "url": "../头戴式EGO采集设备方案.md",
+  "accepted": true,
+  "createdAt": "2026-08-31T11:30:00+08:00",
+  "source": "legacy",
+  "audit": {
+    "decision": "accepted",
+    "reviewerId": null,
+    "reviewedAt": "2026-08-31T11:30:00+08:00",
+    "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。",
+    "legacy": true
+  }
+}

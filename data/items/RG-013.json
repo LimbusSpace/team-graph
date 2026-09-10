@@ -1,0 +1,15 @@
+{
+  "id": "RG-013",
+  "title": "A/B/C 实验框架初稿",
+  "summary": "建立纯视觉、视觉加接触、视觉加接触与关节角三组消融。",
+  "type": "experiment",
+  "phase": "P0 定义",
+  "status": "done",
+  "ownerIds": [
+    "ma"
+  ],
+  "acceptanceCriteria": "对照组、主要指标、实机验证资源和决策规则有书面定义。",
+  "weight": 0.5,
+  "lane": 2,
+  "updatedAt": "2026-08-31T11:20:00+08:00"
+}

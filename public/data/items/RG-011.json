@@ -1,0 +1,57 @@
+{
+  "id": "RG-011",
+  "title": "工厂需求与试点路线初稿",
+  "state": "done",
+  "type": "task",
+  "phase": "P0 定义",
+  "owners": [
+    "fei"
+  ],
+  "acceptance": "形成目标用户、试点范围、合作门槛和合规风险清单。",
+  "hard_dependencies": [],
+  "unlocks": [
+    "RG-020",
+    "RG-022"
+  ],
+  "evidence_summary": {
+    "approved": 1,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "view",
+    "reopen_via_audit"
+  ],
+  "updated_at": "2026-08-31T11:00:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "定义目标工况、合作入口和从实验室到工厂的试点路径。",
+  "evidence": [
+    {
+      "id": "EV-001",
+      "title": "工厂需求、试点路径和合作职责已写入导师评审稿",
+      "kind": "document",
+      "state": "approved",
+      "url": "../doc/PPT/PPT_raw.md",
+      "ref": null,
+      "actor": "fei",
+      "created_at": "2026-08-31T11:00:00+08:00",
+      "audit": {
+        "decision": "accepted",
+        "reviewer": null,
+        "reviewed_at": "2026-08-31T11:00:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。"
+      }
+    }
+  ],
+  "history": [
+    {
+      "id": "AE-001",
+      "action": "evidence.accepted",
+      "actor": "fei",
+      "summary": "工厂需求与试点路线初稿通过文档审计",
+      "at": "2026-08-31T11:00:00+08:00"
+    }
+  ],
+  "evidence_count": 1,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

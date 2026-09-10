@@ -1,0 +1,21 @@
+{
+  "id": "RG-021",
+  "title": "确认主从臂、场地与排期",
+  "summary": "落实 ALOHA 或等价平台、场地、维护人和连续实验时段。",
+  "type": "gate",
+  "phase": "P0 定义",
+  "status": "blocked",
+  "ownerIds": [
+    "ma"
+  ],
+  "acceptanceCriteria": "设备使用权、连续时段、自动复位可行性和故障响应人均得到确认。",
+  "weight": 1,
+  "lane": 5,
+  "updatedAt": "2026-09-05T09:50:00+08:00",
+  "dependsOn": [
+    {
+      "id": "RG-013",
+      "kind": "hard"
+    }
+  ]
+}

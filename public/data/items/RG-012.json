@@ -1,0 +1,57 @@
+{
+  "id": "RG-012",
+  "title": "动作与场景双管线初稿",
+  "state": "done",
+  "type": "task",
+  "phase": "P0 定义",
+  "owners": [
+    "zhang"
+  ],
+  "acceptance": "输入、共享缓存、两类输出和关键质量门均有明确接口。",
+  "hard_dependencies": [],
+  "unlocks": [
+    "RG-020",
+    "RG-023"
+  ],
+  "evidence_summary": {
+    "approved": 1,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "view",
+    "reopen_via_audit"
+  ],
+  "updated_at": "2026-08-31T11:10:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "定义共享视觉中间层、动作数据分支和可交互场景分支。",
+  "evidence": [
+    {
+      "id": "EV-002",
+      "title": "共享中间层与动作/场景双管线方案",
+      "kind": "document",
+      "state": "approved",
+      "url": "../doc/PPT/PPT_raw.md",
+      "ref": null,
+      "actor": "zhang",
+      "created_at": "2026-08-31T11:10:00+08:00",
+      "audit": {
+        "decision": "accepted",
+        "reviewer": null,
+        "reviewed_at": "2026-08-31T11:10:00+08:00",
+        "note": "历史证据迁移：旧版未记录审计人，需在下次复审时补记。"
+      }
+    }
+  ],
+  "history": [
+    {
+      "id": "AE-002",
+      "action": "evidence.accepted",
+      "actor": "zhang",
+      "summary": "动作与场景双管线初稿通过文档审计",
+      "at": "2026-08-31T11:10:00+08:00"
+    }
+  ],
+  "evidence_count": 1,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

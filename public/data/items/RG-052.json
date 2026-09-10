@@ -1,0 +1,42 @@
+{
+  "id": "RG-052",
+  "title": "覆盖 / 合成 / 筛选对照",
+  "state": "planned",
+  "type": "experiment",
+  "phase": "P3 主张",
+  "owners": [
+    "ma",
+    "zhang"
+  ],
+  "acceptance": "所有方法使用相同原始数据、人类时长和训练算力预算。",
+  "hard_dependencies": [
+    {
+      "id": "RG-034",
+      "state": "planned"
+    },
+    {
+      "id": "RG-035",
+      "state": "planned"
+    }
+  ],
+  "unlocks": [
+    "RG-053"
+  ],
+  "evidence_summary": {
+    "approved": 0,
+    "pending": 0,
+    "declined": 0
+  },
+  "allowed_actions": [
+    "start",
+    "add_evidence",
+    "block"
+  ],
+  "updated_at": "2026-09-05T09:50:00+08:00",
+  "revision": "e4fe9942c03baed4",
+  "summary": "实现覆盖驱动、MimicGen 类合成和影响函数筛选基线。",
+  "evidence": [],
+  "history": [],
+  "evidence_count": 0,
+  "generated_hint": "此文件由 scripts/build-data.mjs 生成，请勿手工编辑；事实源在 data/items/。"
+}

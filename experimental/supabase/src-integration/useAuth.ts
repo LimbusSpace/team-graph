@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import type { User } from '@supabase/supabase-js'
-import { getSupabaseClient, isSupabaseConfigured } from '../lib/supabase'
+import { getSupabaseClient, isSupabaseConfigured } from './supabase'
 
 type AuthState = 'local' | 'loading' | 'signed_out' | 'signed_in'
 

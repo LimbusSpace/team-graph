@@ -31,6 +31,79 @@ export function openFrontier(snapshot: ProjectSnapshot) {
   return snapshot.items.filter((item) => isOpenFrontier(item, snapshot))
 }
 
+export type StatusTone = WorkItem['status']
+
+export interface StatusBadgeCopy {
+  label: string
+  tone: StatusTone
+  /** One plain-language sentence under the node title; null when there is nothing worth saying. */
+  detail: string | null
+}
+
+/**
+ * Single source of truth for node / drawer status copy.
+ * Normal waiting on prerequisites is deliberately calm; only `blocked` reads as an alarm.
+ */
+export function statusBadgeCopy(
+  item: WorkItem,
+  options: {
+    isFrontier: boolean
+    blockerCount: number
+    acceptedEvidenceCount: number
+    pendingEvidenceCount: number
+  },
+): StatusBadgeCopy {
+  const { isFrontier, blockerCount, acceptedEvidenceCount, pendingEvidenceCount } = options
+
+  if (item.status === 'done') {
+    return {
+      label: acceptedEvidenceCount > 0 ? `已验收 · ${acceptedEvidenceCount} 条证据` : '已验收',
+      tone: 'done',
+      detail: null,
+    }
+  }
+  if (item.status === 'blocked') {
+    return {
+      label: '异常受阻',
+      tone: 'blocked',
+      detail: blockerCount > 0
+        ? `${blockerCount} 项硬依赖未完成`
+        : '需要人工确认原因和恢复计划',
+    }
+  }
+  if (item.status === 'review') {
+    return {
+      label: '待审计',
+      tone: 'review',
+      detail: pendingEvidenceCount > 0 ? `${pendingEvidenceCount} 条证据待审计` : null,
+    }
+  }
+  if (item.status === 'in_progress') {
+    return {
+      label: '进行中',
+      tone: 'in_progress',
+      detail: pendingEvidenceCount > 0 ? `${pendingEvidenceCount} 条证据待审计` : null,
+    }
+  }
+  if (item.status === 'ready' && isFrontier) {
+    return {
+      label: '可开工',
+      tone: 'ready',
+      detail: acceptedEvidenceCount > 0 ? `已有 ${acceptedEvidenceCount} 条证据通过审计` : null,
+    }
+  }
+  // `planned`, or `ready` but prerequisites are still pending: normal waiting, not an alarm.
+  return {
+    label: '待前置完成',
+    tone: 'planned',
+    detail: blockerCount > 0 ? `${blockerCount} 项硬依赖未完成` : '等待前置节点完成',
+  }
+}
+
+export function formatWeight(value: number) {
+  return Number.isInteger(value) ? String(value) : value.toFixed(1)
+}
+
 export function weightedProgress(snapshot: ProjectSnapshot) {
   const trackable = snapshot.items.filter((item) => item.type !== 'mission')
   const total = trackable.reduce((sum, item) => sum + item.weight, 0)

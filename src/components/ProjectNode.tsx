@@ -1,14 +1,19 @@
 import { Handle, Position, type Node, type NodeProps } from '@xyflow/react'
-import { Check, CircleAlert, FlaskConical, GitFork, LockKeyhole } from 'lucide-react'
+import { statusBadgeCopy } from '../lib/graph'
 import type { TeamMember, WorkItem } from '../types'
 
 export type ProjectNodeData = {
   item: WorkItem
   owners: TeamMember[]
   isFrontier: boolean
+  /** Dimmed because it does not match the owner/status filter. */
   isDimmed: boolean
+  /** Softly dimmed because it is unrelated to the selected node. */
+  isFocusDimmed: boolean
+  isRelated: boolean
   blockerCount: number
-  evidenceCount: number
+  acceptedEvidenceCount: number
+  pendingEvidenceCount: number
 }
 
 export type ProjectFlowNode = Node<ProjectNodeData, 'projectNode'>
@@ -22,26 +27,42 @@ const typeLabels: Record<WorkItem['type'], string> = {
   release: '交付',
 }
 
-const statusLabels: Record<WorkItem['status'], string> = {
-  planned: '等待',
-  ready: '可开工',
-  in_progress: '进行中',
-  review: '待审计',
-  done: '已验证',
-  blocked: '受阻',
-}
-
 export function ProjectNode({ data, selected }: NodeProps<ProjectFlowNode>) {
-  const { item, owners, isFrontier, isDimmed, blockerCount, evidenceCount } = data
+  const {
+    item,
+    owners,
+    isFrontier,
+    isDimmed,
+    isFocusDimmed,
+    isRelated,
+    blockerCount,
+    acceptedEvidenceCount,
+    pendingEvidenceCount,
+  } = data
+  const badge = statusBadgeCopy(item, {
+    isFrontier,
+    blockerCount,
+    acceptedEvidenceCount,
+    pendingEvidenceCount,
+  })
+
+  const className = [
+    'project-node',
+    `tone-${badge.tone}`,
+    selected ? 'is-selected' : '',
+    isDimmed ? 'is-dimmed' : '',
+    isFocusDimmed ? 'is-focus-dimmed' : '',
+    isRelated ? 'is-related' : '',
+  ].filter(Boolean).join(' ')
 
   return (
     <article
-      className={`project-node status-${item.status}${selected ? ' is-selected' : ''}${isDimmed ? ' is-dimmed' : ''}`}
-      aria-label={`${item.id} ${item.title}，${statusLabels[item.status]}`}
+      className={className}
+      aria-label={`${item.id} ${item.title}，${badge.label}`}
     >
       <Handle type="target" position={Position.Left} className="node-handle" />
       <div className="node-meta">
-        <span>{item.id}</span>
+        <span className="node-id">{item.id}</span>
         <span>{typeLabels[item.type]}</span>
       </div>
       <h3>{item.title}</h3>
@@ -52,22 +73,9 @@ export function ProjectNode({ data, selected }: NodeProps<ProjectFlowNode>) {
           ))}
           {owners.length > 3 && <span>+{owners.length - 3}</span>}
         </div>
-        <span className="node-signal">
-          {item.status === 'done' ? (
-            <><Check size={13} /> {evidenceCount}</>
-          ) : item.status === 'blocked' ? (
-            <><CircleAlert size={13} /> 受阻</>
-          ) : blockerCount > 0 ? (
-            <><LockKeyhole size={13} /> {blockerCount}</>
-          ) : isFrontier ? (
-            <><GitFork size={13} /> 可开工</>
-          ) : item.type === 'experiment' ? (
-            <><FlaskConical size={13} /> 实验</>
-          ) : (
-            statusLabels[item.status]
-          )}
-        </span>
+        <span className={`node-badge badge-${badge.tone}`}>{badge.label}</span>
       </div>
+      {badge.detail && <p className="node-detail">{badge.detail}</p>}
       <Handle type="source" position={Position.Right} className="node-handle" />
     </article>
   )
